@@ -125,7 +125,7 @@ h6 {
   @apply p-btn-x;
   @apply p-btn-y;
 
-  &::hover {
+  &:hover {
     @apply bg-primary-hover;
   }
 }
