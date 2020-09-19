@@ -18,10 +18,11 @@ class MyDocument extends Document {
           <script
             async
             defer
-            crossOrigin="anonymous"
-            src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v8.0&appId=101798941684900&autoLogAppEvents=1"
-            nonce="QrXhXqkG"
+            crossorigin="anonymous"
+            src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v8.0&appId=243311399938661&autoLogAppEvents=1"
+            nonce="xhNa80zR"
           ></script>
+          <script src="/fbMessenger.plugin.js"></script>
           {/** --- end region --- */}
           <Main />
           <NextScript />

@@ -3,7 +3,7 @@ import styles from "./layout.module.scss";
 import Link from "next/link";
 import cn from "classnames";
 import config from "../app.config.json";
-import { findDOMNode } from "react-dom";
+import loadScript from "load-script";
 
 const HEADER_DATA = [
   {
@@ -64,7 +64,6 @@ const CONTACT_FOOTER_DATA = [
 
 function Layout({ children }) {
   const refResponsiveNavBar = React.useRef();
-  const [myDocument, setMyDocument] = React.useState(null);
   const [
     responsiveNavbarOffsetTop,
     setResponsiveNavbarOffsetTop,
@@ -72,28 +71,7 @@ function Layout({ children }) {
   const [isShowNavMobile, setShowNavMobile] = React.useState(false);
 
   React.useEffect(() => {
-    setMyDocument(document);
-    handleFBScript();
   }, []);
-
-  function handleFBScript() {
-    window.fbAsyncInit = function () {
-      FB.init({
-        xfbml: true,
-        version: "v8.0",
-      });
-    };
-
-    (function (d, s, id) {
-      var js,
-        fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    })(document, "script", "facebook-jssdk");
-  }
 
   React.useEffect(() => {
     if (refResponsiveNavBar.current) {
@@ -231,25 +209,28 @@ function Layout({ children }) {
 
           <div className={styles.footerBlock}>
             <div className={styles.blockTitle}>Facebook</div>
+            {/** --- FACEBOOK FANPAGE PLUGIN ---*/}
             <div
               className="fb-page"
-              data-href="https://www.facebook.com/askFUHL/"
-              data-tabs=""
+              data-href="https://www.facebook.com/Testing-Business-Website-101798941684900"
+              data-tabs="timeline"
               data-width=""
               data-height=""
               data-small-header="false"
               data-adapt-container-width="true"
               data-hide-cover="false"
               data-show-facepile="true"
-              data-lazy="true"
             >
               <blockquote
-                cite="https://www.facebook.com/askFUHL/"
+                cite="https://www.facebook.com/Testing-Business-Website-101798941684900"
                 className="fb-xfbml-parse-ignore"
               >
-                <a href="https://www.facebook.com/askFUHL/">Talkshow ASK.FU</a>
+                <a href="https://www.facebook.com/Testing-Business-Website-101798941684900">
+                  Testing Business Website
+                </a>
               </blockquote>
             </div>
+            {/** --- end region --- */}
           </div>
         </div>
 
