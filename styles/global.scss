@@ -1,0 +1,133 @@
+@tailwind base;
+
+/* Write your own custom base styles here */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Nunito;
+  line-height: 24px;
+  font-size: 15px;
+  @apply bg-body;
+}
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+/* Write you own custom component styles here */
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+// a:hover {
+//   text-decoration: underline;
+// }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-default;
+  @apply text-h;
+}
+
+h1 {
+  @apply font-h1-mob;
+  @apply leading-h1-mob;
+  @apply text-h1-mob;
+  @screen lg {
+    @apply font-h1;
+    @apply leading-h1;
+    @apply text-h1;
+  }
+}
+
+h2 {
+  @apply font-h2-mob;
+  @apply leading-h2-mob;
+  @apply text-h2-mob;
+  @screen lg {
+    @apply font-h2;
+    @apply leading-h2;
+    @apply text-h2-mob;
+  }
+}
+h3 {
+  @apply font-h3-mob;
+  @apply leading-h3-mob;
+  @apply text-h3-mob;
+  @screen lg {
+    @apply font-h3;
+    @apply leading-h3;
+    @apply text-h3-mob;
+  }
+}
+h4 {
+  @apply font-h4-mob;
+  @apply leading-h4-mob;
+  @apply text-h4-mob;
+  @screen lg {
+    @apply font-h4;
+    @apply leading-h4;
+    @apply text-h4-mob;
+  }
+}
+h5 {
+  @apply font-h5-mob;
+  @apply leading-h5-mob;
+  @apply text-h5-mob;
+  @screen lg {
+    @apply font-h5;
+    @apply leading-h5;
+    @apply text-h5-mob;
+  }
+}
+h6 {
+  @apply font-h6-mob;
+  @apply leading-h6-mob;
+  @apply text-h6-mob;
+  @screen lg {
+    @apply font-h6;
+    @apply leading-h6;
+    @apply text-h6-mob;
+  }
+}
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Your own custom utilities */
+
+.script {
+  @apply font-h;
+  @apply text-script;
+  @apply leading-script;
+}
+
+.btn {
+  @apply bg-primary;
+  @apply p-btn-x;
+  @apply p-btn-y;
+
+  &::hover {
+    @apply bg-primary-hover;
+  }
+}
+
+.full-center{
+  @apply flex;
+  @apply items-center;
+  @apply justify-items-center;
+}
