@@ -130,18 +130,28 @@ h6 {
   }
 }
 
-.full-center{
+.full-center {
   @apply flex;
   @apply items-center;
   @apply justify-items-center;
 }
 
-.stickyBtn{
+@mixin stickyBtn {
   position: fixed;
   bottom: 55px !important;
   z-index: 9999;
 
   @screen lg {
     bottom: 40px !important;
+  }
+}
+
+.stickyBtn {
+  @include stickyBtn();
+}
+
+[class*="fb_dialog_content"] {
+  > iframe {
+    @include stickyBtn();
   }
 }
