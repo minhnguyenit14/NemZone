@@ -148,7 +148,7 @@ function Layout({ children }) {
         <title>{config.name}</title>
       </Head>
 
-      <header className="w-full fixed z-50">
+      <header className="w-full fixed z-50 overflow-hidden">
         <div className={cn("flex justify-center p-btn-y", styles.header)}>
           {renderHeaderData()}
         </div>
@@ -194,6 +194,9 @@ function Layout({ children }) {
           </div>
         </div>
       </header>
+      {isShowNavMobile && (
+        <div className=" absolute w-full h-full bg-white  lg:hidden" />
+      )}
       <main style={{ marginTop: responsiveNavbarOffsetTop }}>{children}</main>
       <footer className={cn(styles.footerContainer)}>
         <div className={styles.footerMainContainer}>
