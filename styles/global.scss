@@ -24,9 +24,13 @@ a {
   text-decoration: none;
 }
 
-// a:hover {
-//   text-decoration: underline;
-// }
+button:focus {
+  outline: none;
+}
+
+button:active {
+  outline: none;
+}
 
 img {
   max-width: 100%;

@@ -10,7 +10,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="stylesheet" href="/fonts/fonts.css" />
+          <link rel="stylesheet" href="/assets/fonts/fonts.css" />
         </Head>
         <body>
           {/** ---- Facebook page-plugin required component --- */}

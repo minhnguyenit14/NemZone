@@ -70,8 +70,7 @@ function Layout({ children }) {
   ] = React.useState(0);
   const [isShowNavMobile, setShowNavMobile] = React.useState(false);
 
-  React.useEffect(() => {
-  }, []);
+  React.useEffect(() => {}, []);
 
   React.useEffect(() => {
     if (refResponsiveNavBar.current) {
@@ -145,7 +144,7 @@ function Layout({ children }) {
   return (
     <div className={styles.container}>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.svg" />
         <title>{config.name}</title>
       </Head>
 
@@ -166,7 +165,11 @@ function Layout({ children }) {
                 styles.responsiveNavTogglerContainer
               )}
             >
-              <img src="/logo.svg" className={styles.headerLogo} />
+              <Link href="/">
+                <a>
+                  <img src="/logo.svg" className={styles.headerLogo} />
+                </a>
+              </Link>
               <NavMobileToggle
                 onClick={toggleNavMobile}
                 isOpen={isShowNavMobile}
@@ -195,7 +198,11 @@ function Layout({ children }) {
       <footer className={cn(styles.footerContainer)}>
         <div className={styles.footerMainContainer}>
           <div className={styles.footerBlock}>
-            <img src="/logo.svg" />
+            <Link href="/">
+              <a>
+                <img src="/logo.svg" />
+              </a>
+            </Link>
           </div>
 
           <div className={styles.footerBlock}>
@@ -209,28 +216,38 @@ function Layout({ children }) {
 
           <div className={styles.footerBlock}>
             <div className={styles.blockTitle}>Facebook</div>
-            {/** --- FACEBOOK FANPAGE PLUGIN ---*/}
-            <div
-              className="fb-page"
-              data-href="https://www.facebook.com/Testing-Business-Website-101798941684900"
-              data-tabs="timeline"
-              data-width=""
-              data-height=""
-              data-small-header="false"
-              data-adapt-container-width="true"
-              data-hide-cover="false"
-              data-show-facepile="true"
-            >
-              <blockquote
-                cite="https://www.facebook.com/Testing-Business-Website-101798941684900"
-                className="fb-xfbml-parse-ignore"
+            <div className={styles.blockContent}>
+              {/** --- FACEBOOK FANPAGE PLUGIN ---*/}
+              <div
+                className={cn(
+                  styles.navFooterItem,
+                  styles.navFooterContactItem
+                )}
               >
-                <a href="https://www.facebook.com/Testing-Business-Website-101798941684900">
-                  Testing Business Website
-                </a>
-              </blockquote>
+                <div
+                  className="fb-page"
+                  data-href="https://www.facebook.com/Testing-Business-Website-101798941684900"
+                  data-tabs="timeline"
+                  data-width=""
+                  data-height=""
+                  data-small-header="false"
+                  data-adapt-container-width="true"
+                  data-hide-cover="false"
+                  data-show-facepile="true"
+                  style={{ position: "unset !important" }}
+                >
+                  <blockquote
+                    cite="https://www.facebook.com/Testing-Business-Website-101798941684900"
+                    className="fb-xfbml-parse-ignore"
+                  >
+                    <a href="https://www.facebook.com/Testing-Business-Website-101798941684900">
+                      Testing Business Website
+                    </a>
+                  </blockquote>
+                </div>
+              </div>
+              {/** --- end region --- */}
             </div>
-            {/** --- end region --- */}
           </div>
         </div>
 
@@ -238,12 +255,25 @@ function Layout({ children }) {
           Copyright © 2020 - NemZone. All Rights Reserved.
         </p>
 
+        <a
+          href={`tel:${config.hotline}`}
+          className={cn(styles.hotlineContainer, styles.stickyBtn)}
+        >
+          <div className={styles.hotlineIconContainer}>
+            <img className={styles.hotlineIcon} src="/assets/icons/phone.svg" />
+          </div>
+          <p className={styles.hotlinePhone}>
+            Hotline: {config.hotline_formatted}
+          </p>
+        </a>
+
         <div
-          className="fb-customerchat"
+          className={cn("fb-customerchat", styles.stickyBtn)}
           attribution="setup_tool"
           page_id="101798941684900"
           logged_in_greeting="Chào mừng bạn đến với Nemzone!"
           logged_out_greeting="Chào mừng bạn đến với Nemzone!"
+          greeting_dialog_display="hide"
         ></div>
       </footer>
     </div>
