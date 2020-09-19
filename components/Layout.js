@@ -148,7 +148,7 @@ function Layout({ children }) {
         <title>{config.name}</title>
       </Head>
 
-      <header className="w-full fixed">
+      <header className="w-full fixed z-50">
         <div className={cn("flex justify-center p-btn-y", styles.header)}>
           {renderHeaderData()}
         </div>
@@ -268,7 +268,7 @@ function Layout({ children }) {
         </a>
 
         <div
-          className={cn("fb-customerchat", styles.stickyBtn)}
+          className="fb-customerchat"
           attribution="setup_tool"
           page_id="101798941684900"
           logged_in_greeting="Chào mừng bạn đến với Nemzone!"
