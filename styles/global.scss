@@ -135,3 +135,13 @@ h6 {
   @apply items-center;
   @apply justify-items-center;
 }
+
+.stickyBtn{
+  position: fixed;
+  bottom: 55px !important;
+  z-index: 9999;
+
+  @screen lg {
+    bottom: 40px !important;
+  }
+}

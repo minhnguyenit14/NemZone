@@ -257,7 +257,7 @@ function Layout({ children }) {
 
         <a
           href={`tel:${config.hotline}`}
-          className={cn(styles.hotlineContainer, styles.stickyBtn)}
+          className={cn(styles.hotlineContainer, "stickyBtn")}
         >
           <div className={styles.hotlineIconContainer}>
             <img className={styles.hotlineIcon} src="/assets/icons/phone.svg" />
