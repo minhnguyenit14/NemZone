@@ -64,13 +64,19 @@ const CONTACT_FOOTER_DATA = [
 
 function Layout({ children }) {
   const refResponsiveNavBar = React.useRef();
+  const refFBBlock = React.useRef();
   const [
     responsiveNavbarOffsetTop,
     setResponsiveNavbarOffsetTop,
   ] = React.useState(0);
   const [isShowNavMobile, setShowNavMobile] = React.useState(false);
+  const [widthFBBlock, setWidthFBBlock] = React.useState(null);
 
-  React.useEffect(() => {}, []);
+  React.useEffect(() => {
+    if (refFBBlock.current) {
+      setWidthFBBlock(refFBBlock.current.clientWidth);
+    }
+  }, []);
 
   React.useEffect(() => {
     if (refResponsiveNavBar.current) {
@@ -219,38 +225,40 @@ function Layout({ children }) {
 
           <div className={styles.footerBlock}>
             <div className={styles.blockTitle}>Facebook</div>
-            <div className={styles.blockContent}>
+            <div ref={refFBBlock} className={styles.blockContent}>
               {/** --- FACEBOOK FANPAGE PLUGIN ---*/}
-              <div
-                className={cn(
-                  styles.navFooterItem,
-                  styles.navFooterContactItem
-                )}
-              >
+              {!!widthFBBlock && (
                 <div
-                  className="fb-page"
-                  data-href="https://www.facebook.com/Testing-Business-Website-101798941684900"
-                  data-tabs="timeline"
-                  data-width="100%"
-                  data-height=""
-                  data-small-header="false"
-                  data-adapt-container-width="true"
-                  data-hide-cover="false"
-                  data-show-facepile="true"
+                  className={cn(
+                    styles.navFooterItem,
+                    styles.navFooterContactItem
+                  )}
                 >
-                  <blockquote
-                    cite="https://www.facebook.com/Testing-Business-Website-101798941684900"
-                    className="fb-xfbml-parse-ignore"
+                  <div
+                    className="fb-page"
+                    data-href="https://www.facebook.com/Testing-Business-Website-101798941684900"
+                    data-tabs=""
+                    data-width="widthFBBlock"
+                    data-height=""
+                    data-small-header="false"
+                    data-adapt-container-width="true"
+                    data-hide-cover="false"
+                    data-show-facepile="true"
                   >
-                    <a
-                      target="_blank"
-                      href="https://www.facebook.com/Testing-Business-Website-101798941684900"
+                    <blockquote
+                      cite="https://www.facebook.com/Testing-Business-Website-101798941684900"
+                      className="fb-xfbml-parse-ignore"
                     >
-                      Testing Business Website
-                    </a>
-                  </blockquote>
+                      <a
+                        target="_blank"
+                        href="https://www.facebook.com/Testing-Business-Website-101798941684900"
+                      >
+                        Testing Business Website
+                      </a>
+                    </blockquote>
+                  </div>
                 </div>
-              </div>
+              )}
               {/** --- end region --- */}
             </div>
           </div>

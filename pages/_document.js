@@ -12,18 +12,18 @@ class MyDocument extends Document {
         <Head>
           <link rel="stylesheet" href="/assets/fonts/fonts.css" />
           {/** ---- Facebook page-plugin required component --- */}
+          <script src="/fbMessenger.plugin.js"></script>
+          {/** --- end region --- */}
+        </Head>
+        <body>
           <div id="fb-root"></div>
           <script
             async
             defer
             crossorigin="anonymous"
             src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v8.0&appId=243311399938661&autoLogAppEvents=1"
-            nonce="xhNa80zR"
+            nonce="fWqJuSgZ"
           ></script>
-          <script src="/fbMessenger.plugin.js"></script>
-          {/** --- end region --- */}
-        </Head>
-        <body>
           <Main />
           <NextScript />
         </body>
