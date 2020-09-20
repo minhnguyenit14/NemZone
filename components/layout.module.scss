@@ -271,7 +271,7 @@
   padding: 0px;
   position: fixed;
   top: auto;
-  height: 60px;
+  height: 50px;
   border-radius: 30px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px 0px;
   left: 12px;
@@ -279,9 +279,9 @@
 
 .hotlineIconContainer {
   @apply bg-primary;
-  width: 60px;
-  height: 60px;
-  border-radius: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
 }
 
 .hotlineIcon {
