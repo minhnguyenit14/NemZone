@@ -2,6 +2,7 @@ import Document, { Head, Html, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
   static async getInittialProps(ctx) {
+    ctx.cookie = "SameSite=None; Secure;";
     const initalProps = await Document.getInitialProps(ctx);
     return { ...initalProps };
   }
