@@ -231,19 +231,21 @@ function Layout({ children }) {
                   className="fb-page"
                   data-href="https://www.facebook.com/Testing-Business-Website-101798941684900"
                   data-tabs="timeline"
-                  data-width=""
+                  data-width="100%"
                   data-height=""
                   data-small-header="false"
                   data-adapt-container-width="true"
                   data-hide-cover="false"
                   data-show-facepile="true"
-                  style={{ position: "unset !important" }}
                 >
                   <blockquote
                     cite="https://www.facebook.com/Testing-Business-Website-101798941684900"
                     className="fb-xfbml-parse-ignore"
                   >
-                    <a href="https://www.facebook.com/Testing-Business-Website-101798941684900">
+                    <a
+                      target="_blank"
+                      href="https://www.facebook.com/Testing-Business-Website-101798941684900"
+                    >
                       Testing Business Website
                     </a>
                   </blockquote>
