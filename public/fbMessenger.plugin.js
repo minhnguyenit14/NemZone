@@ -11,7 +11,7 @@ window.fbAsyncInit = function () {
   if (d.getElementById(id)) return;
   js = d.createElement(s);
   js.id = id;
+  js.setAttribute("crossorigin", "anonymous");
   js.src = "https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js";
-  js.crossorigin = "anonymous";
   fjs.parentNode.insertBefore(js, fjs);
 })(document, "script", "facebook-jssdk");
