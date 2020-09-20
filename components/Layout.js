@@ -238,7 +238,7 @@ function Layout({ children }) {
                     className="fb-page"
                     data-href="https://www.facebook.com/Testing-Business-Website-101798941684900"
                     data-tabs=""
-                    data-width="widthFBBlock"
+                    data-width={widthFBBlock}
                     data-height=""
                     data-small-header="false"
                     data-adapt-container-width="true"
