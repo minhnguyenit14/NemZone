@@ -1,0 +1,53 @@
+.imgDimmed {
+  @apply w-full;
+}
+
+.imageBackgroundDimmed {
+  @apply relative;
+  @apply flex;
+  @apply flex-col;
+  @apply justify-center;
+  @apply items-center;
+  @apply w-full;
+  @apply h-full;
+  @apply p-btn-y;
+
+  padding: 50px 15px;
+
+  @screen lg {
+    padding: 100px 15px;
+  }
+
+  &::after {
+    @apply absolute;
+    @apply w-full;
+    @apply h-full;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(#000000, 0.5);
+  }
+  *:not(img) {
+    z-index: 1;
+  }
+  >img {
+    @apply absolute;
+    @apply w-full;
+    @apply h-full;
+    @apply object-cover;
+  }
+  h1 {
+    @apply relative;
+    @apply text-white;
+    text-transform: uppercase;
+    text-align: center;
+
+    @screen lg {
+      font-size: 50px;
+      line-height: 68px;
+      font-weight: 800;
+    }
+  }
+}

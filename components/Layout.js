@@ -1,5 +1,5 @@
 import Head from "next/head";
-import styles from "./layout.module.scss";
+import styles from "../styles/components/layout.module.scss";
 import Link from "next/link";
 import cn from "classnames";
 import config from "../app.config.json";
@@ -64,17 +64,24 @@ const CONTACT_FOOTER_DATA = [
 
 function Layout({ children }) {
   const refResponsiveNavBar = React.useRef();
+  const refHeader = React.useRef();
   const refFBBlock = React.useRef();
+
   const [
     responsiveNavbarOffsetTop,
     setResponsiveNavbarOffsetTop,
   ] = React.useState(0);
   const [isShowNavMobile, setShowNavMobile] = React.useState(false);
   const [widthFBBlock, setWidthFBBlock] = React.useState(null);
+  const [headerHeight, setHeaderHeight] = React.useState(0);
 
   React.useEffect(() => {
     if (refFBBlock.current) {
       setWidthFBBlock(refFBBlock.current.clientWidth);
+    }
+
+    if(refHeader.current){
+      setHeaderHeight(refHeader.current.clientHeight);
     }
   }, []);
 
@@ -154,7 +161,7 @@ function Layout({ children }) {
         <title>{config.name}</title>
       </Head>
 
-      <header className="w-full fixed z-50 overflow-hidden">
+      <header ref={refHeader} className="w-full fixed z-50 overflow-hidden">
         <div className={cn("flex justify-center p-btn-y", styles.header)}>
           {renderHeaderData()}
         </div>
@@ -203,7 +210,7 @@ function Layout({ children }) {
       {isShowNavMobile && (
         <div className=" absolute w-full h-full bg-white  lg:hidden" />
       )}
-      <main style={{ marginTop: responsiveNavbarOffsetTop }}>{children}</main>
+      <main style={{ marginTop: headerHeight }}>{children}</main>
       <footer className={cn(styles.footerContainer)}>
         <div className={styles.footerMainContainer}>
           <div className={styles.footerBlock}>

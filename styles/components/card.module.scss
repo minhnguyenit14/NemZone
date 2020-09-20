@@ -1,0 +1,15 @@
+.cardContainer {
+    @apply flex;
+    @apply flex-col;
+    @apply items-center;
+    @apply justify-center;
+    @apply bg-white;
+    @apply w-full;
+    @apply px-card-x;
+    @apply py-card-y;
+    border-radius: 20px;
+
+    @screen lg {
+        @apply w-auto;
+    }
+}

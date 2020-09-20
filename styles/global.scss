@@ -108,11 +108,17 @@ h6 {
   }
 }
 
-/* Start purging... */
-@tailwind utilities;
-/* Stop purging. */
+p{
+  @apply font-p;
+  @apply text-p;
+  @apply text-default;
+  @apply leading-default;
+}
 
-/* Your own custom utilities */
+.appContainer {
+  @apply max-w-app-width;
+  margin: 0 auto;
+}
 
 .script {
   @apply font-h;
@@ -122,11 +128,26 @@ h6 {
 
 .btn {
   @apply bg-primary;
-  @apply p-btn-x;
-  @apply p-btn-y;
+  @apply px-btn-x;
+  @apply py-btn-y;
+  @apply text-white;
+  line-height: 20px;
+  border-radius: 10px;
 
   &:hover {
     @apply bg-primary-hover;
+  }
+
+  > p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span {
+    @apply text-white;
+    line-height: 20px;
   }
 }
 
@@ -150,6 +171,7 @@ h6 {
   @include stickyBtn();
 }
 
+// FACEBOOK MESSENGER Plugin
 [class*="fb_dialog_content"] {
   > iframe {
     @include stickyBtn();
@@ -157,3 +179,39 @@ h6 {
     transform-origin: bottom right;
   }
 }
+//----
+.flexContainer {
+  @apply flex;
+  @apply flex-col;
+  @apply relative;
+  padding: 50px 20px;
+
+  @screen lg {
+    @apply flex-row;
+    @apply justify-center;
+    padding: 100px 15px;
+  }
+}
+
+.floatFlex {
+  @apply flex;
+  @apply flex-1;
+  @apply flex-col;
+  @apply justify-center;
+  @apply relative;
+  z-index: 1;
+}
+
+.textScript {
+  @apply font-script;
+  @apply text-script;
+  @apply text-primary;
+  @apply leading-script;
+  @apply font-bold;
+}
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Your own custom utilities */

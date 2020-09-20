@@ -11,8 +11,8 @@ module.exports = {
         script: "Dancing Script",
       },
       fontSize: {
+        default: "15px",
         script: "24px",
-        p: "15px",
         h1: "50px",
         "h1-mob": "32px",
         h2: "40px",
@@ -86,6 +86,7 @@ module.exports = {
         "card-x": "25px",
         "card-y": "40px",
         "0-auto": "0 auto",
+        50: "50px"
       },
       maxWidth: {
         "app-width": "1200px",

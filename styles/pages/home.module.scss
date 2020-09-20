@@ -1,0 +1,64 @@
+.highlightFirst {
+  height: 411px;
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  button {
+    text-transform: uppercase;
+  }
+
+  @screen lg {
+    height: 600px;
+  }
+}
+
+.highlightTextScript {
+  margin-top: 30px;
+
+  @screen lg {
+    margin-top: 0px;
+  }
+}
+
+.highlightHeading {
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+
+.highlightDescription {
+  > p {
+    color: #63666b;
+    &:first-child {
+      margin-top: 30px;
+    }
+    &:last-child {
+      margin-top: 20px;
+    }
+  }
+}
+
+.highlightBtn {
+  margin-top: 40px;
+}
+
+.cardWrapper {
+  padding: 15px 0;
+  @screen lg {
+    padding: 0 15px;
+  }
+}
+
+.cardContainer {
+  > h5 {
+    @apply font-h5;
+    @apply leading-h5;
+
+    margin-top: 30px;
+  }
+
+  > p {
+    margin-top: 10px;
+    text-align: center;
+  }
+}

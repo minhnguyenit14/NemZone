@@ -1,0 +1,20 @@
+
+.imageBackground {
+    @apply absolute;
+    @apply w-full;
+    @apply h-full;
+    @apply z-0;
+  
+    > img {
+      @apply w-full;
+      @apply h-full;
+      @apply object-cover;
+      @apply object-left;
+    }
+  
+    @screen lg {
+      > img {
+        @apply object-fill;
+      }
+    }
+  }
