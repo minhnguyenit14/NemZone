@@ -4,6 +4,7 @@ import styles from '../styles/components/highlightBlock.module.scss';
 function HighlightBlock({ 
     imgBackgroundUrl,
     containerClassName,
+    contentClassName,
     children
  }) {
   return (
@@ -14,7 +15,7 @@ function HighlightBlock({
         </div>
       )}
 
-      <div className="flexContainer max-w-app-width m-0-auto">
+      <div className={cn("flexContainer max-w-app-width m-0-auto", contentClassName)}>
           {children}
       </div>
     </div>

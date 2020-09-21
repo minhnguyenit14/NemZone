@@ -64,7 +64,7 @@ h2 {
   @screen lg {
     @apply font-h2;
     @apply leading-h2;
-    @apply text-h2-mob;
+    @apply text-h2;
   }
 }
 h3 {
@@ -74,7 +74,7 @@ h3 {
   @screen lg {
     @apply font-h3;
     @apply leading-h3;
-    @apply text-h3-mob;
+    @apply text-h3;
   }
 }
 h4 {
@@ -84,7 +84,7 @@ h4 {
   @screen lg {
     @apply font-h4;
     @apply leading-h4;
-    @apply text-h4-mob;
+    @apply text-h4;
   }
 }
 h5 {
@@ -94,7 +94,7 @@ h5 {
   @screen lg {
     @apply font-h5;
     @apply leading-h5;
-    @apply text-h5-mob;
+    @apply text-h5;
   }
 }
 h6 {
@@ -104,7 +104,7 @@ h6 {
   @screen lg {
     @apply font-h6;
     @apply leading-h6;
-    @apply text-h6-mob;
+    @apply text-h6;
   }
 }
 

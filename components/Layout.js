@@ -62,34 +62,21 @@ const CONTACT_FOOTER_DATA = [
   },
 ];
 
+const HEADER_INFO_HEIGHT = 50;
+const HEADER_MAIN_HEIGHT = 80;
+const HEADER_HEIGHT = HEADER_INFO_HEIGHT + HEADER_MAIN_HEIGHT;
+
 function Layout({ children }) {
-  const refResponsiveNavBar = React.useRef();
-  const refHeader = React.useRef();
   const refFBBlock = React.useRef();
 
-  const [
-    responsiveNavbarOffsetTop,
-    setResponsiveNavbarOffsetTop,
-  ] = React.useState(0);
   const [isShowNavMobile, setShowNavMobile] = React.useState(false);
   const [widthFBBlock, setWidthFBBlock] = React.useState(null);
-  const [headerHeight, setHeaderHeight] = React.useState(0);
 
   React.useEffect(() => {
     if (refFBBlock.current) {
       setWidthFBBlock(refFBBlock.current.clientWidth);
     }
-
-    if(refHeader.current){
-      setHeaderHeight(refHeader.current.clientHeight);
-    }
   }, []);
-
-  React.useEffect(() => {
-    if (refResponsiveNavBar.current) {
-      setResponsiveNavbarOffsetTop(refResponsiveNavBar.current.offsetTop);
-    }
-  });
 
   function toggleNavMobile() {
     setShowNavMobile(!isShowNavMobile);
@@ -161,11 +148,17 @@ function Layout({ children }) {
         <title>{config.name}</title>
       </Head>
 
-      <header ref={refHeader} className="w-full fixed z-50 overflow-hidden">
-        <div className={cn("flex justify-center p-btn-y", styles.header)}>
+      <header className={cn("w-full fixed z-50", styles.headerContainer)}>
+        <div
+          className={cn("flex justify-center p-btn-y", styles.headerInfo)}
+          style={{ height: HEADER_INFO_HEIGHT }}
+        >
           {renderHeaderData()}
         </div>
-        <div className={cn(styles.navWrapper)}>
+        <div
+          className={cn(styles.navWrapper)}
+          style={{ height: HEADER_MAIN_HEIGHT }}
+        >
           <div
             className={cn(
               "max-w-app-width flex flex-1 justify-between items-center",
@@ -188,17 +181,14 @@ function Layout({ children }) {
                 isOpen={isShowNavMobile}
               />
             </div>
-            <div
-              ref={refResponsiveNavBar}
-              className={styles.navItemMobileContainer}
-            >
+            <div className={styles.navItemMobileContainer}>
               <div
                 className={cn(
                   styles.navItemContainer,
                   isShowNavMobile && styles.showNavMobile
                 )}
                 style={{
-                  height: `calc(100vh - ${responsiveNavbarOffsetTop}px)`,
+                  height: `calc(100vh - ${HEADER_HEIGHT}px)`,
                 }}
               >
                 {renderNavHeader()}
@@ -210,7 +200,7 @@ function Layout({ children }) {
       {isShowNavMobile && (
         <div className=" absolute w-full h-full bg-white  lg:hidden" />
       )}
-      <main style={{ marginTop: headerHeight }}>{children}</main>
+      <main style={{ marginTop: HEADER_HEIGHT }}>{children}</main>
       <footer className={cn(styles.footerContainer)}>
         <div className={styles.footerMainContainer}>
           <div className={styles.footerBlock}>
