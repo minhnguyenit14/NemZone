@@ -1,10 +1,6 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
-  static async getInittialProps(ctx) {
-    const initalProps = await Document.getInitialProps(ctx);
-    return { ...initalProps };
-  }
 
   render() {
     return (
@@ -12,18 +8,18 @@ class MyDocument extends Document {
         <Head>
           <link rel="stylesheet" href="/assets/fonts/fonts.css" />
           {/** ---- Facebook page-plugin required component --- */}
-          <script src="/fbMessenger.plugin.js"></script>
+          {/* <script src="/fbMessenger.plugin.js"></script> */}
           {/** --- end region --- */}
         </Head>
         <body>
           <div id="fb-root"></div>
-          <script
+          {/* <script
             async
             defer
             crossOrigin="anonymous"
             src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v8.0&appId=243311399938661&autoLogAppEvents=1"
             nonce="fWqJuSgZ"
-          ></script>
+          ></script> */}
           <Main />
           <NextScript />
         </body>

@@ -21,7 +21,7 @@
   *:not(img) {
     z-index: 1;
   }
-  >img {
+  > img {
     @apply absolute;
     @apply w-full;
     @apply h-full;
@@ -53,4 +53,10 @@
     bottom: 0;
     background-color: rgba(#000000, 0.5);
   }
+}
+
+.lazyStaticImageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
 }

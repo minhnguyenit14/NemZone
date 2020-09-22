@@ -10,8 +10,13 @@
   "dependencies": {
     "@types/classnames": "^2.2.10",
     "classnames": "^2.2.6",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^8.0.0",
     "load-script": "^1.0.0",
+    "lqip-loader": "^2.2.1",
     "next": "9.5.3",
+    "next-optimized-images": "^2.6.2",
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
     "react": "16.13.1",

@@ -1,33 +1,34 @@
-import Head from "next/head";
+import dynamic from "next/dynamic";
 import Layout from "../components/Layout";
-import styles from "../styles/pages/home.module.scss";
-import cn from "classnames";
 import HighlightBlock from "../components/HighlightBlock";
 import HeroBlock from "../components/HeroBlock";
+import styles from "../styles/pages/home.module.scss";
+import cn from "classnames";
 import Card from "../components/Card";
 import Carousel from "../components/Carousel";
+const LazyStaticImage = dynamic(() => import("../components/LazyStaticImage"));
 
 const CARD_DATA = [
   {
-    icon: "/assets/icons/nature.svg",
+    icon: require("../assets/icons/nature.svg"),
     title: "Không dầu mỡ",
     description:
       "Các món Nem đều được chúng tôi nướng bằng nồi chiên không dầu,nhờ đó giòn tan không cần rán, đảm bảo sức khỏe cho mỗi thực khách.",
   },
   {
-    icon: "/assets/icons/fast-delivery.svg",
+    icon: require("../assets/icons/fast-delivery.svg"),
     title: "Không dầu mỡ",
     description:
       "Các món Nem đều được chúng tôi nướng bằng nồi chiên không dầu,nhờ đó giòn tan không cần rán, đảm bảo sức khỏe cho mỗi thực khách.",
   },
   {
-    icon: "/assets/icons/snack.svg",
+    icon: require("../assets/icons/snack.svg"),
     title: "Không dầu mỡ",
     description:
       "Các món Nem đều được chúng tôi nướng bằng nồi chiên không dầu,nhờ đó giòn tan không cần rán, đảm bảo sức khỏe cho mỗi thực khách.",
   },
   {
-    icon: "/assets/icons/hot-food.svg",
+    icon: require("../assets/icons/hot-food.svg"),
     title: "Không dầu mỡ",
     description:
       "Các món Nem đều được chúng tôi nướng bằng nồi chiên không dầu,nhờ đó giòn tan không cần rán, đảm bảo sức khỏe cho mỗi thực khách.",
@@ -35,31 +36,31 @@ const CARD_DATA = [
 ];
 
 const PRODUCT_IMAGES = [
-  "/assets/images/home/7.png",
-  "/assets/images/home/8.png",
-  "/assets/images/home/9.png",
-  "/assets/images/home/10.png",
-  "/assets/images/home/11.png",
-  "/assets/images/home/12.png",
+  require("../assets/images/home/7.png"),
+  require("../assets/images/home/8.png"),
+  require("../assets/images/home/9.png"),
+  require("../assets/images/home/10.png"),
+  require("../assets/images/home/11.png"),
+  require("../assets/images/home/12.png"),
 ];
 
 const CARD_BLOG_DATA = [
   {
-    image: "/assets/images/home/14.jpeg",
+    image: require("../assets/images/home/14.jpeg"),
     title: "3 Thói Quen Quan Trọng Nhất Để Xây Dựng Lối Sống Xanh",
     description:
       "Có hàng trăm, thậm chí hàng nghìn việc chúng ta có thể làm để giảm thiểu lượng tài nguyên và khí thải được sản xuất từ cuộc sống hàng ngày. ...",
     note: "Đăng bởi NemZone | 23/08/2020",
   },
   {
-    image: "/assets/images/home/15.jpeg",
+    image: require("../assets/images/home/15.jpeg"),
     title: "Cách đơn giản nhất để bảo quản rau tươi trong tủ lạnh",
     description:
       "Bạn muốn bảo quản rau tươi trong một thời gian dài? Bạn đã biết cách nhưng đang tìm kiếm một phương án xanh hơn và không tạo ra rác thải? ...",
     note: "Đăng bởi NemZone | 23/08/2020",
   },
   {
-    image: "/assets/images/home/16.jpeg",
+    image: require("../assets/images/home/16.jpeg"),
     title: "7 Nguyên Tắc Không Thể Không Biết về Chế Độ Ăn Sạch (Eat Clean)",
     description:
       "Ăn sạch (Eat clean) là một trong những xu hướng sức khỏe được quan tâm nhất tại Việt Nam trong những năm gần đây. ...",
@@ -69,22 +70,22 @@ const CARD_BLOG_DATA = [
 
 const CARD_FEEDBACK_DATA = [
   {
-    icon: "/assets/icons/quote.svg",
-    image: "/assets/images/home/avatar1.jpeg",
+    icon: require("../assets/icons/quote.svg"),
+    image: require("../assets/images/home/avatar1.jpeg"),
     title: "Tran Tu Anh",
     description:
       "Hộp đựng là hộp giấy, lót bên trong là lá chuối chứ không phải giấy bạc, 10 điểm cho packaging. Nem thính rất ngon, mẹ chồng mình khen cả lớp vỏ bánh dai, không bị bục nem. Nước chấm vừa, không ngọt gắt.",
   },
   {
-    icon: "/assets/icons/quote.svg",
-    image: "/assets/images/home/avatar2.jpeg",
+    icon: require("../assets/icons/quote.svg"),
+    image: require("../assets/images/home/avatar2.jpeg"),
     title: "Ly Vu",
     description:
       "Vừa ngon vừa sạch lại còn dùng đồ giấy bảo vệ môi trường. Mình cực kì hài lòng với sản phẩm.",
   },
   {
-    icon: "/assets/icons/quote.svg",
-    image: "/assets/images/home/avatar1.jpeg",
+    icon: require("../assets/icons/quote.svg"),
+    image: require("../assets/images/home/avatar1.jpeg"),
     title: "Tran Tu Anh",
     description:
       "Hộp đựng là hộp giấy, lót bên trong là lá chuối chứ không phải giấy bạc, 10 điểm cho packaging. Nem thính rất ngon, mẹ chồng mình khen cả lớp vỏ bánh dai, không bị bục nem. Nước chấm vừa, không ngọt gắt.",
@@ -190,7 +191,8 @@ function Home() {
     <Layout>
       <HeroBlock
         containerClassName={styles.highlightFirst}
-        backgroundUrl="/assets/images/home/1.png"
+        imgBackgroundUrlPreview={require("../assets/images/home/1.png?lqip")}
+        imgBackgroundUrl={require("../assets/images/home/1.png")}
       >
         <h1>Nem giòn không dầu mỡ</h1>
         <button className={cn("btn")}>Xem thực đơn ngay</button>
@@ -198,10 +200,16 @@ function Home() {
 
       <HighlightBlock
         containerClassName="bg-white"
-        imgBackgroundUrl="/assets/images/home/bg1.png"
+        imgBackgroundUrlPreview={require("../assets/images/home/bg1.png?lqip")}
+        imgBackgroundUrl={require("../assets/images/home/bg1.png")}
       >
         <HighlightBlock.Item>
-          <img className="z-10" src="/assets/images/home/2.png" />
+          <div>
+            <img
+              className="z-10"
+              src={require("../assets/images/home/2.png")}
+            />
+          </div>
         </HighlightBlock.Item>
         <HighlightBlock.Item className="lg:px-50">
           <p className={cn("textScript", styles.highlightTextScript)}>
@@ -234,7 +242,8 @@ function Home() {
 
       <HeroBlock
         containerClassName={styles.highlightSecond}
-        backgroundUrl="/assets/images/home/3.png"
+        imgBackgroundUrlPreview={require("../assets/images/home/3.png?lqip")}
+        imgBackgroundUrl={require("../assets/images/home/3.png")}
       >
         <p className={cn("textScript")}>Thế mạnh của chúng tôi</p>
         <h3 className={cn(styles.highlightHeading, "text-white")}>
@@ -253,10 +262,16 @@ function Home() {
       <HighlightBlock
         containerClassName={cn("bg-white")}
         contentClassName="lg:flex-row-reverse"
-        imgBackgroundUrl="/assets/images/home/bg2.png"
+        imgBackgroundUrlPreview={require("../assets/images/home/bg2.png?lqip")}
+        imgBackgroundUrl={require("../assets/images/home/bg2.png")}
       >
         <HighlightBlock.Item>
-          <img className="z-10" src="/assets/images/home/4.png" />
+          <div>
+            <img
+              className="z-10"
+              src={require("../assets/images/home/4.png?original")}
+            />
+          </div>
         </HighlightBlock.Item>
         <HighlightBlock.Item className="lg:px-50 lg:pr-10">
           <div className={styles.menuContainer}>
@@ -298,7 +313,8 @@ function Home() {
         containerClassName={styles.highlightSecond}
         contentClassName={styles.contentFeedbackContainer}
         contentWrapperClassName={styles.contentFeedbackWrapper}
-        backgroundUrl="/assets/images/home/7.png"
+        imgBackgroundUrlPreview={require("../assets/images/home/7.png?lqip")}
+        imgBackgroundUrl={require("../assets/images/home/7.png")}
       >
         <p className={cn("textScript")}>Hãy cùng xem</p>
         <h3 className={cn(styles.highlightHeading, "text-white")}>
@@ -315,7 +331,8 @@ function Home() {
       <HighlightBlock
         containerClassName={cn("bg-white")}
         contentClassName="flex-col items-center"
-        imgBackgroundUrl="/assets/images/home/bg3.png"
+        imgBackgroundUrlPreview={require("../assets/images/home/bg3.png?lqip")}
+        imgBackgroundUrl={require("../assets/images/home/bg3.png")}
       >
         <p className={cn("textScript", styles.highlightTextScript)}>
           Blog của chúng tôi

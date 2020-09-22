@@ -108,7 +108,7 @@ h6 {
   }
 }
 
-p{
+p {
   @apply font-p;
   @apply text-p;
   @apply text-default;
@@ -215,3 +215,10 @@ p{
 /* Stop purging. */
 
 /* Your own custom utilities */
+
+.blurImage {
+  filter: blur(0);
+  img {
+    filter: blur(25px);
+  }
+}

@@ -76,6 +76,7 @@ function Layout({ children }) {
     if (refFBBlock.current) {
       setWidthFBBlock(refFBBlock.current.clientWidth);
     }
+    loadScript("/fbMessenger.plugin.js");
   }, []);
 
   function toggleNavMobile() {
@@ -270,7 +271,7 @@ function Layout({ children }) {
           className={cn(styles.hotlineContainer, "stickyBtn")}
         >
           <div className={styles.hotlineIconContainer}>
-            <img className={styles.hotlineIcon} src="/assets/icons/phone.svg" />
+            <img className={styles.hotlineIcon} src={require("../assets/icons/phone.svg")} />
           </div>
           <p className={styles.hotlinePhone}>
             Hotline: {config.hotline_formatted}
