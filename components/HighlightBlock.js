@@ -6,6 +6,7 @@ const LazyStaticImage = dynamic(() => import("./LazyStaticImage"));
 function HighlightBlock({
   imgBackgroundUrl,
   imgBackgroundUrlPreview,
+  imgBackgroundClassName,
   containerClassName,
   contentClassName,
   children,
@@ -14,7 +15,11 @@ function HighlightBlock({
     <div className={cn("relative", containerClassName)}>
       {!!imgBackgroundUrl && (
         <div className={styles.imageBackground}>
-          <LazyStaticImage src={imgBackgroundUrl} previewSrc={imgBackgroundUrlPreview} />
+          <LazyStaticImage
+            src={imgBackgroundUrl}
+            previewSrc={imgBackgroundUrlPreview}
+            className={imgBackgroundClassName}
+          />
         </div>
       )}
 

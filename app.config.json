@@ -2,7 +2,9 @@
     "name": "NemZone",
     "hotline": "02466856868",
     "hotline_formatted": "024 6685 6868",
+    "hotline_link": "tel:02466856868",
     "address": "101 B3 Nghĩa Tân, quận Cầu Giấy, Hà Nội",
+    "address_link": "https://goo.gl/maps/5EQFoc6jLreAHHwc6",
     "email": "cskh@nemzone.vn",
-    "fb_link": "fb.com/nemzone"
+    "fb_link": "https://www.facebook.com/NemZone"
 }

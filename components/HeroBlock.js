@@ -8,6 +8,7 @@ function HeroBlock({
   containerClassName,
   contentClassName,
   contentWrapperClassName,
+  imgBackgroundClassName,
   imgBackgroundUrlPreview,
   imgBackgroundUrl,
 }) {
@@ -24,6 +25,7 @@ function HeroBlock({
           <LazyStaticImage
             src={imgBackgroundUrl}
             previewSrc={imgBackgroundUrlPreview}
+            className={imgBackgroundClassName}
           />
         )}
         <div

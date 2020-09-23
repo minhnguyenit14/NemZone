@@ -1,0 +1,145 @@
+.brandStoryContainer {
+  @screen lg {
+    padding-top: 80px;
+  }
+}
+
+.brandStoryHeadingContainer {
+  padding: 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  h3 {
+    @apply text-center;
+    @apply relative;
+    text-transform: uppercase;
+    margin-top: 10px;
+
+    @screen lg {
+      margin-top: 0;
+    }
+  }
+
+  @screen lg {
+    padding-top: 100px;
+    img {
+      margin-right: 20px;
+    }
+  }
+}
+
+.brandStoryContentContainer {
+  max-width: 770px;
+  > p:last-child {
+    margin-top: 15px;
+  }
+}
+
+.coreValueWrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.coreValueContainer {
+  > h3 {
+    @apply text-white;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+}
+
+.coreValueBlock {
+  height: 56vw !important;
+  > div {
+    height: 100%;
+  }
+
+  @screen lg {
+    height: calc(62.5vw / 2) !important;
+  }
+}
+
+.shoppingMethodHeading {
+  @apply text-white;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
+.cardsContainer {
+  padding: 0;
+
+  .cardWrapper {
+    margin-top: 30px;
+  }
+
+  @screen lg {
+    margin-top: 60px;
+
+    .cardWrapper {
+      margin-top: 0;
+      &:not(:nth-child(1)) {
+        margin-left: 30px;
+      }
+    }
+  }
+}
+
+.cardWrapper {
+  > div {
+    height: 100%;
+    @apply justify-between;
+    @apply items-center;
+
+    padding: 50px 30px;
+
+    @screen lg {
+      min-width: 350px;
+    }
+  }
+}
+
+.cardIconContainer {
+  @apply flex;
+  @apply justify-center;
+  @apply items-center;
+  @apply bg-primary;
+  padding: 20px;
+  border-radius: 50%;
+
+  > img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.cardMainContent {
+  @apply text-center;
+  margin-top: 30px;
+
+  > h5 {
+    margin-bottom: 10px;
+  }
+}
+
+.cardBtn {
+  @apply flex;
+  @apply justify-center;
+  @apply items-center;
+  h6 {
+    @apply text-primary;
+    line-height: 0;
+    margin-right: 10px;
+  }
+  margin-top: 30px;
+}
+
+.btnIconContainer {
+  @apply text-primary;
+  > svg {
+    height: 15px;
+    width: 10px;
+    > path {
+      @apply stroke-current;
+      stroke-width: 2px;
+    }
+  }
+}

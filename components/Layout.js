@@ -27,7 +27,7 @@ const NAV_DATA = [
   },
   {
     title: "Giới thiệu",
-    link: "/",
+    link: "/about",
   },
   {
     title: "Thực đơn",
