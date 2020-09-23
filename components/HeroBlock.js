@@ -22,13 +22,10 @@ function HeroBlock({
       >
         {!!imgBackgroundUrl && (
           <LazyStaticImage
-            url={imgBackgroundUrl}
-            previewUrl={imgBackgroundUrlPreview}
-            containerClassName={styles.lazyStaticImageContainer}
+            src={imgBackgroundUrl}
+            previewSrc={imgBackgroundUrlPreview}
           />
         )}
-        {/* {!!imgBackgroundUrlPreview && <img className="blurImage" src={imgBackgroundUrlPreview} />}
-        {!!imgBackgroundUrl && <img src={imgBackgroundUrl} />} */}
         <div
           className={cn(
             "max-w-app-width flex flex-col items-center",

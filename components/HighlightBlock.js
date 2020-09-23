@@ -13,14 +13,9 @@ function HighlightBlock({
   return (
     <div className={cn("relative", containerClassName)}>
       {!!imgBackgroundUrl && (
-        <LazyStaticImage
-          url={imgBackgroundUrl}
-          previewUrl={imgBackgroundUrlPreview}
-          containerClassName={styles.imageBackground}
-        />
-        // <div className={styles.imageBackground}>
-        //   <img src={imgBackgroundUrl} />
-        // </div>
+        <div className={styles.imageBackground}>
+          <LazyStaticImage src={imgBackgroundUrl} previewSrc={imgBackgroundUrlPreview} />
+        </div>
       )}
 
       <div
