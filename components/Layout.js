@@ -31,11 +31,11 @@ const NAV_DATA = [
   },
   {
     title: "Thực đơn",
-    link: "/",
+    link: "/menu",
   },
   {
     title: "Liên hệ",
-    link: "/",
+    link: "/contact",
   },
   {
     title: "Cẩm Nang Sống Xanh",
@@ -58,7 +58,7 @@ const CONTACT_FOOTER_DATA = [
   },
   {
     title: "Giờ mở cửa",
-    value: "9h-18h hàng ngày",
+    value: config.open_time,
   },
 ];
 
@@ -234,7 +234,7 @@ function Layout({ children }) {
                 >
                   <div
                     className="fb-page"
-                    data-href="https://www.facebook.com/Testing-Business-Website-101798941684900"
+                    data-href="https://www.facebook.com/NemZone"
                     data-tabs=""
                     data-width={widthFBBlock}
                     data-height=""
@@ -244,14 +244,14 @@ function Layout({ children }) {
                     data-show-facepile="true"
                   >
                     <blockquote
-                      cite="https://www.facebook.com/Testing-Business-Website-101798941684900"
+                      cite="https://www.facebook.com/NemZone"
                       className="fb-xfbml-parse-ignore"
                     >
                       <a
                         target="_blank"
-                        href="https://www.facebook.com/Testing-Business-Website-101798941684900"
+                        href="https://www.facebook.com/NemZone"
                       >
-                        Testing Business Website
+                        NemZone
                       </a>
                     </blockquote>
                   </div>
@@ -271,7 +271,10 @@ function Layout({ children }) {
           className={cn(styles.hotlineContainer, "stickyBtn")}
         >
           <div className={styles.hotlineIconContainer}>
-            <img className={styles.hotlineIcon} src={require("../assets/icons/phone.svg")} />
+            <img
+              className={styles.hotlineIcon}
+              src={require("../assets/icons/phone.svg")}
+            />
           </div>
           <p className={styles.hotlinePhone}>
             Hotline: {config.hotline_formatted}
@@ -281,11 +284,8 @@ function Layout({ children }) {
         <div
           className="fb-customerchat"
           attribution="setup_tool"
-          page_id="101798941684900"
-          logged_in_greeting="Chào mừng bạn đến với Nemzone!"
-          logged_out_greeting="Chào mừng bạn đến với Nemzone!"
-          greeting_dialog_display="hide"
-        ></div>
+          page_id="1119644398129491"
+        />
       </footer>
     </div>
   );

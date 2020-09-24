@@ -1,0 +1,131 @@
+.heroBlock {
+  height: 80vw;
+  @apply flex-row;
+  > div {
+    padding: 0;
+    @apply flex-row;
+    @apply items-end;
+  }
+
+  @screen lg {
+    height: 31.25vw;
+  }
+}
+
+.menuHeadingContainer {
+  @apply flex-1;
+  @apply flex-row;
+  @apply items-stretch;
+  > .menuItemContainer:first-child {
+    border-top-left-radius: 20px;
+  }
+
+  > .menuItemContainer:last-child {
+    border-top-right-radius: 20px;
+  }
+}
+
+.menuItemContainer {
+  @apply flex-1;
+  background-color: rgba(#000, 0.6);
+  @apply text-primary;
+  @apply border-current;
+  border-bottom-width: 5px;
+  padding: 30px 15px;
+  h4 {
+    @apply text-white;
+  }
+  @screen lg {
+    padding: 40px 20px;
+  }
+}
+
+.selected {
+  h4 {
+    @apply text-primary;
+  }
+  &::after {
+    content: "";
+    @apply absolute;
+    @apply w-0;
+    @apply h-0;
+    @apply text-primary;
+    @apply border-current;
+    bottom: -9px;
+    border-top-width: 9px;
+    border-left-width: 10px;
+    border-right-width: 10px;
+    border-bottom-width: 0;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+  }
+}
+
+.foodsWrapper {
+  background-color: #e5e5e5;
+}
+
+.foodsContainer {
+  @apply flex;
+  @apply flex-wrap;
+  @apply justify-start;
+  padding-top: 30px;
+  padding-bottom: 50px;
+
+  @screen lg {
+    padding: 0;
+    padding-bottom: 80px;
+  }
+}
+
+.foodContainer {
+  margin-top: 30px;
+  width: 100%;
+
+  @screen lg {
+    width: 50%;
+    margin-top: 60px;
+  }
+}
+
+.foodImageContainer {
+  @apply relative;
+  @apply overflow-hidden;
+  border-radius: 10px;
+  width: 165px;
+  height: 165px;
+  > div {
+    padding-bottom: 100%;
+  }
+
+  img {
+    @apply absolute;
+    @apply object-cover;
+    @apply w-full;
+    @apply h-full;
+  }
+
+  @screen lg {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.foodInfoContainer {
+  flex: 1;
+  padding: 0 15px;
+  h5 {
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+
+  @screen lg {
+    padding: 0 30px;
+  }
+}
+
+.foodBtn {
+  border-radius: 20px;
+  padding: 5px 10px;
+}
