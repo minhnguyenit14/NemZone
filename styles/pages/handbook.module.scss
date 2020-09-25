@@ -1,0 +1,188 @@
+.container {
+  padding: 20px 15px;
+  @screen lg {
+    padding: 80px 0;
+  }
+}
+
+.mainBlock {
+  @apply p-0;
+  @apply flex-1;
+  @screen lg {
+    flex: 2;
+  }
+}
+
+.subBlock {
+  @apply flex-1;
+  @apply justify-start;
+  @apply p-0;
+  @screen lg {
+    margin-left: 30px;
+  }
+}
+
+.pinCard {
+  border: 1px solid #e3e3e3;
+  padding: 40px 30px;
+  margin-top: 30px;
+
+  h5,
+  p {
+    @apply text-center;
+  }
+
+  h5 {
+    text-transform: uppercase;
+  }
+
+  p {
+    margin-top: 15px;
+  }
+
+  @screen lg {
+    padding: 40px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.pinCardImg {
+  @apply relative;
+  @apply flex;
+  @apply justify-center;
+  @apply items-center;
+  @apply w-full;
+  padding-bottom: 80%;
+
+  img {
+    @apply absolute;
+    @apply top-0;
+    @apply m-0-auto;
+    @apply max-h-full;
+    padding-bottom: 50px;
+  }
+}
+
+.recentlyCardContainer {
+  @apply items-start;
+
+  margin-top: 30px;
+  &:nth-of-type(1) {
+    margin-top: 35px;
+  }
+  > div {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 20px;
+    width: 100px;
+    height: 100px;
+    img {
+      @apply w-full;
+      @apply h-full;
+      @apply object-cover;
+    }
+  }
+
+  h6 {
+    flex: 1;
+  }
+}
+
+.highlightTextScript {
+  margin-top: 30px;
+
+  @screen lg {
+    margin-top: 0px;
+  }
+}
+
+.highlightHeading {
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+
+.cardWrapper {
+  padding: 15px 0;
+  flex-direction: unset;
+
+  @screen lg {
+    padding: 0 15px;
+  }
+}
+
+.blogContentContainer {
+  padding: 0;
+}
+
+.cardsBlogContainer {
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.cardBlogWrapper {
+  padding: 0;
+  margin-top: 30px;
+
+  @screen lg {
+    margin-top: 0;
+  }
+}
+
+.cardBlogContainer {
+  padding: 0 !important;
+  border: 1px solid #ececec;
+}
+
+.normalBlock {
+  @screen lg {
+    margin-top: 30px;
+    max-width: calc(50% - 15px);
+  }
+}
+
+.hotBlock {
+  @screen lg {
+    @apply contents;
+    max-width: unset;
+    margin-top: 0;
+  }
+}
+
+.cardBlogImage {
+  @apply relative;
+  @apply w-full;
+  padding-bottom: 65% !important;
+  > img {
+    @apply absolute;
+    @apply w-full;
+    @apply h-full;
+    @apply object-cover;
+    @apply object-center;
+  }
+}
+
+.cardBlogMainContent {
+  @apply flex;
+  @apply flex-col;
+  @apply flex-1;
+  padding: 20px;
+
+  > p {
+    margin-top: 10px !important;
+    margin-bottom: 40px;
+    @apply flex-1;
+  }
+
+  > p:last-child {
+    font-size: 13px;
+    flex: 0;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: -20px;
+    padding: 15px 20px;
+    color: #999999;
+    box-shadow: 0 -1px 0 0 #ececec;
+  }
+}

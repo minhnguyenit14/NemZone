@@ -39,7 +39,7 @@ const NAV_DATA = [
   },
   {
     title: "Cẩm Nang Sống Xanh",
-    link: "/",
+    link: "/handbook",
   },
 ];
 
@@ -76,7 +76,7 @@ function Layout({ children }) {
     if (refFBBlock.current) {
       setWidthFBBlock(refFBBlock.current.clientWidth);
     }
-    loadScript("/fbMessenger.plugin.js");
+    // loadScript("/fbMessenger.plugin.js");
   }, []);
 
   function toggleNavMobile() {
