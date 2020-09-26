@@ -13,11 +13,11 @@ function Contact() {
           src={config.address_map_link}
           width="100%"
           height="100%"
-          frameborder="0"
+          frameBorder="0"
           style={{ border: 0 }}
-          allowfullscreen="false"
+          allowFullScreen="false"
           aria-hidden="false"
-          tabindex="0"
+          tabIndex="0"
           className="lazyload blur-up"
         ></iframe>
       </div>
@@ -33,8 +33,8 @@ function Contact() {
           <p>Giờ mở cửa: {config.open_time}</p>
           <p>
             Facebook:{" "}
-            <a target="_blank" href={config.fb_link}>
-              <p className="link">{config.fb_link}</p>
+            <a className="link" target="_blank" href={config.fb_link}>
+              {config.fb_link}
             </a>
           </p>
         </div>
@@ -58,7 +58,7 @@ function Contact() {
             />
           </div>
 
-          <button class="btn">Gửi tin nhắn</button>
+          <button className="btn">Gửi tin nhắn</button>
         </HighlightBlock.Item>
       </HighlightBlock>
     </Layout>

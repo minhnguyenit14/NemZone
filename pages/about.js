@@ -18,10 +18,12 @@ function About() {
         )}
         imgBackgroundUrl={require("../assets/images/about/bg1.png")}
       >
-        <LazyStaticImage
-          previewSrc={require("../assets/images/about/1.png?lqip")}
-          src={require("../assets/images/about/1.png")}
-        />
+        <div className={styles.brandStoryImageContainer}>
+          <LazyStaticImage
+            previewSrc={require("../assets/images/about/1.png?lqip")}
+            src={require("../assets/images/about/1.png")}
+          />
+        </div>
         <div className={cn("flexContainer", styles.brandStoryHeadingContainer)}>
           <div className="flex flex-col lg:flex-row relative">
             <img src={require("../assets/icons/chopstick.svg")} />
