@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import styles from "../styles/components/layout.module.scss";
 import Link from "next/link";
 import cn from "classnames";
@@ -67,6 +68,8 @@ const HEADER_MAIN_HEIGHT = 80;
 const HEADER_HEIGHT = HEADER_INFO_HEIGHT + HEADER_MAIN_HEIGHT;
 
 function Layout({ children }) {
+  const router = useRouter();
+
   const refFBBlock = React.useRef();
 
   const [isShowNavMobile, setShowNavMobile] = React.useState(false);
@@ -96,10 +99,11 @@ function Layout({ children }) {
 
   function renderNavHeader(navData = NAV_DATA) {
     return navData.map((nav, index) => {
+      const extraClassName = router.pathname == nav.link ? "text-primary" : "";
       return (
         <Link key={index} href={nav.link}>
           <a>
-            <h6 className={cn(styles.navItem, styles.navHeaderLinkItem)}>
+            <h6 className={cn(styles.navItem, styles.navHeaderLinkItem, extraClassName)}>
               {nav.title}
             </h6>
           </a>

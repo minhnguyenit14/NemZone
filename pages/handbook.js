@@ -8,7 +8,7 @@ import styles from "../styles/pages/handbook.module.scss";
 
 const CARD_BLOG_DATA = [
   {
-    image: require("../assets/images/home/14.jpeg"),
+    image: require("../assets/images/home/13.jpg"),
     title: "3 Thói Quen Quan Trọng Nhất Để Xây Dựng Lối Sống Xanh",
     description:
       "Có hàng trăm, thậm chí hàng nghìn việc chúng ta có thể làm để giảm thiểu lượng tài nguyên và khí thải được sản xuất từ cuộc sống hàng ngày. ...",
@@ -16,7 +16,7 @@ const CARD_BLOG_DATA = [
     href: "#",
   },
   {
-    image: require("../assets/images/home/15.jpeg"),
+    image: require("../assets/images/home/14.jpg"),
     title: "Cách đơn giản nhất để bảo quản rau tươi trong tủ lạnh",
     description:
       "Bạn muốn bảo quản rau tươi trong một thời gian dài? Bạn đã biết cách nhưng đang tìm kiếm một phương án xanh hơn và không tạo ra rác thải? ...",
@@ -24,7 +24,7 @@ const CARD_BLOG_DATA = [
     href: "#",
   },
   {
-    image: require("../assets/images/home/16.jpeg"),
+    image: require("../assets/images/home/15.jpg"),
     title: "7 Nguyên Tắc Không Thể Không Biết về Chế Độ Ăn Sạch (Eat Clean)",
     description:
       "Ăn sạch (Eat clean) là một trong những xu hướng sức khỏe được quan tâm nhất tại Việt Nam trong những năm gần đây. ...",
@@ -32,7 +32,7 @@ const CARD_BLOG_DATA = [
     href: "#",
   },
   {
-    image: require("../assets/images/home/14.jpeg"),
+    image: require("../assets/images/home/13.jpg"),
     title: "3 Thói Quen Quan Trọng Nhất Để Xây Dựng Lối Sống Xanh",
     description:
       "Có hàng trăm, thậm chí hàng nghìn việc chúng ta có thể làm để giảm thiểu lượng tài nguyên và khí thải được sản xuất từ cuộc sống hàng ngày. ...",
@@ -40,7 +40,7 @@ const CARD_BLOG_DATA = [
     href: "#",
   },
   {
-    image: require("../assets/images/home/15.jpeg"),
+    image: require("../assets/images/home/14.jpg"),
     title: "Cách đơn giản nhất để bảo quản rau tươi trong tủ lạnh",
     description:
       "Bạn muốn bảo quản rau tươi trong một thời gian dài? Bạn đã biết cách nhưng đang tìm kiếm một phương án xanh hơn và không tạo ra rác thải? ...",
@@ -48,7 +48,7 @@ const CARD_BLOG_DATA = [
     href: "#",
   },
   {
-    image: require("../assets/images/home/16.jpeg"),
+    image: require("../assets/images/home/15.jpg"),
     title: "7 Nguyên Tắc Không Thể Không Biết về Chế Độ Ăn Sạch (Eat Clean)",
     description:
       "Ăn sạch (Eat clean) là một trong những xu hướng sức khỏe được quan tâm nhất tại Việt Nam trong những năm gần đây. ...",
@@ -59,20 +59,24 @@ const CARD_BLOG_DATA = [
 
 const RECENTLY_CARD_DATA = [
   {
-    image: require("../assets/images/home/14.jpeg"),
+    image: require("../assets/images/home/13.jpg"),
     title: "3 Thói Quen Quan Trọng Nhất Để Xây Dựng Lối Sống Xanh",
+    href: "#",
   },
   {
-    image: require("../assets/images/home/15.jpeg"),
+    image: require("../assets/images/home/14.jpg"),
     title: "Cách đơn giản nhất để bảo quản rau tươi trong tủ lạnh",
+    href: "#",
   },
   {
-    image: require("../assets/images/home/16.jpeg"),
+    image: require("../assets/images/home/15.jpg"),
     title: "7 Nguyên Tắc Không Thể Không Biết về Chế Độ Ăn Sạch (Eat Clean)",
+    href: "#",
   },
   {
-    image: require("../assets/images/home/14.jpeg"),
+    image: require("../assets/images/home/13.jpg"),
     title: "3 Thói Quen Quan Trọng Nhất Để Xây Dựng Lối Sống Xanh",
+    href: "#",
   },
 ];
 
@@ -133,7 +137,11 @@ function Handbook() {
           <div>
             <img src={card.image} />
           </div>
-          <h6>{card.title}</h6>
+          <Link href={card.href}>
+            <a>
+              <h6 className="hover:text-primary">{card.title}</h6>
+            </a>
+          </Link>
         </div>
       );
     });

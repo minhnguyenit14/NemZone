@@ -36,31 +36,31 @@ const CARD_DATA = [
 ];
 
 const PRODUCT_IMAGES = [
-  require("../assets/images/home/7.png"),
-  require("../assets/images/home/8.png"),
-  require("../assets/images/home/9.png"),
-  require("../assets/images/home/10.png"),
+  require("../assets/images/home/7.jpg"),
+  require("../assets/images/home/8.jpg"),
+  require("../assets/images/home/9.jpg"),
+  require("../assets/images/home/10.jpg"),
   require("../assets/images/home/11.png"),
-  require("../assets/images/home/12.png"),
+  require("../assets/images/home/12.jpg"),
 ];
 
 const CARD_BLOG_DATA = [
   {
-    image: require("../assets/images/home/14.jpeg"),
+    image: require("../assets/images/home/13.jpg"),
     title: "3 Thói Quen Quan Trọng Nhất Để Xây Dựng Lối Sống Xanh",
     description:
       "Có hàng trăm, thậm chí hàng nghìn việc chúng ta có thể làm để giảm thiểu lượng tài nguyên và khí thải được sản xuất từ cuộc sống hàng ngày. ...",
     note: "Đăng bởi NemZone | 23/08/2020",
   },
   {
-    image: require("../assets/images/home/15.jpeg"),
+    image: require("../assets/images/home/14.jpg"),
     title: "Cách đơn giản nhất để bảo quản rau tươi trong tủ lạnh",
     description:
       "Bạn muốn bảo quản rau tươi trong một thời gian dài? Bạn đã biết cách nhưng đang tìm kiếm một phương án xanh hơn và không tạo ra rác thải? ...",
     note: "Đăng bởi NemZone | 23/08/2020",
   },
   {
-    image: require("../assets/images/home/16.jpeg"),
+    image: require("../assets/images/home/15.jpg"),
     title: "7 Nguyên Tắc Không Thể Không Biết về Chế Độ Ăn Sạch (Eat Clean)",
     description:
       "Ăn sạch (Eat clean) là một trong những xu hướng sức khỏe được quan tâm nhất tại Việt Nam trong những năm gần đây. ...",
@@ -191,8 +191,8 @@ function Home() {
     <Layout>
       <HeroBlock
         containerClassName={styles.highlightFirst}
-        imgBackgroundUrlPreview={require("../assets/images/home/1.png?lqip")}
-        imgBackgroundUrl={require("../assets/images/home/1.png")}
+        imgBackgroundUrlPreview={require("../assets/images/home/1.jpg?lqip")}
+        imgBackgroundUrl={require("../assets/images/home/1.jpg")}
       >
         <h1>Nem giòn không dầu mỡ</h1>
         <button className={cn("btn")}>Xem thực đơn ngay</button>
@@ -242,8 +242,8 @@ function Home() {
 
       <HeroBlock
         containerClassName={styles.highlightSecond}
-        imgBackgroundUrlPreview={require("../assets/images/home/3.png?lqip")}
-        imgBackgroundUrl={require("../assets/images/home/3.png")}
+        imgBackgroundUrlPreview={require("../assets/images/home/3.jpg?lqip")}
+        imgBackgroundUrl={require("../assets/images/home/3.jpg")}
       >
         <p className={cn("textScript")}>Thế mạnh của chúng tôi</p>
         <h3 className={cn(styles.highlightHeading, "text-white")}>
@@ -313,8 +313,8 @@ function Home() {
         containerClassName={styles.highlightSecond}
         contentClassName={styles.contentFeedbackContainer}
         contentWrapperClassName={styles.contentFeedbackWrapper}
-        imgBackgroundUrlPreview={require("../assets/images/home/7.png?lqip")}
-        imgBackgroundUrl={require("../assets/images/home/7.png")}
+        imgBackgroundUrlPreview={require("../assets/images/home/7.jpg?lqip")}
+        imgBackgroundUrl={require("../assets/images/home/7.jpg")}
       >
         <p className={cn("textScript")}>Hãy cùng xem</p>
         <h3 className={cn(styles.highlightHeading, "text-white")}>

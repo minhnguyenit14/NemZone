@@ -62,8 +62,8 @@ function About() {
 
         <HighlightBlock.Item className={styles.coreValueBlock}>
           <HeroBlock
-            imgBackgroundUrlPreview={require("../assets/images/about/3.png?lqip")}
-            imgBackgroundUrl={require("../assets/images/about/3.png")}
+            imgBackgroundUrlPreview={require("../assets/images/about/3.jpg?lqip")}
+            imgBackgroundUrl={require("../assets/images/about/3.jpg")}
             contentClassName={styles.coreValueContainer}
           >
             <p className="textScript">Giá trị cốt lõi #1</p>

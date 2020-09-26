@@ -20,17 +20,17 @@ const MENU_DATA = [
 
 const FOOD_DATA = [
   {
-    image: require("../assets/images/menu/2.jpeg"),
+    image: require("../assets/images/menu/2.jpg"),
     name: "NEM TÔM ( 15 C )",
     price: "195.000 VNĐ",
   },
   {
-    image: require("../assets/images/menu/3.jpeg"),
+    image: require("../assets/images/menu/3.jpg"),
     name: "NEM QUE ( 35 C )",
     price: "95.000 VNĐ",
   },
   {
-    image: require("../assets/images/menu/4.jpeg"),
+    image: require("../assets/images/menu/4.jpg"),
     name: "NEM NẤM ( 15 C )",
     price: "130.000 VNĐ",
   },
@@ -40,62 +40,62 @@ const FOOD_DATA = [
     price: "165.000 VNĐ",
   },
   {
-    image: require("../assets/images/menu/6.jpeg"),
+    image: require("../assets/images/menu/6.jpg"),
     name: "NEM THỊT PHÔ MAI ( 10 C )",
     price: "135.000 VNĐ",
   },
   {
-    image: require("../assets/images/menu/7.jpeg"),
+    image: require("../assets/images/menu/7.jpg"),
     name: "NEM CUA ( 10 C )",
     price: "135.000 VNĐ",
   },
   {
-    image: require("../assets/images/menu/8.jpeg"),
+    image: require("../assets/images/menu/8.jpg"),
     name: "NEM GÀ NGÔ NON ( 15 C )",
     price: "130.000 VNĐ",
   },
   {
-    image: require("../assets/images/menu/9.jpeg"),
+    image: require("../assets/images/menu/9.jpg"),
     name: "NEM TỔNG HỢP ( 18 C )",
     price: "199.000 VNĐ",
   },
   {
-    image: require("../assets/images/menu/10.png"),
+    image: require("../assets/images/menu/10.jpg"),
     name: "NEM CHUỐI ( 20 C )",
     price: "195.000 VNĐ",
   },
   {
-    image: require("../assets/images/menu/11.jpeg"),
+    image: require("../assets/images/menu/11.jpg"),
     name: "NEM XÔI KHO QUẸT)",
     price: "85.000 VNĐ",
   },
   {
-    image: require("../assets/images/menu/12.jpeg"),
+    image: require("../assets/images/menu/12.jpg"),
     name: "XÚC XÍCH GÀ ( 10 C )",
     price: "120.000 VNĐ",
   },
   {
-    image: require("../assets/images/menu/13.png"),
+    image: require("../assets/images/menu/13.jpg"),
     name: "MÌ RAU CỦ",
     price: "125.000 VNĐ",
   },
   {
-    image: require("../assets/images/menu/14.png"),
+    image: require("../assets/images/menu/14.jpg"),
     name: "CÁNH GÀ TẨM BỘT GIÒN ( 600gr )",
     price: "165.000 VNĐ",
   },
   {
-    image: require("../assets/images/menu/15.png"),
+    image: require("../assets/images/menu/15.jpg"),
     name: "BÁNH GỐI MINI NƯỚNG ( 12 C )",
     price: "95.000 VNĐ",
   },
   {
-    image: require("../assets/images/menu/16.jpeg"),
+    image: require("../assets/images/menu/16.jpg"),
     name: "TRÀ ĐẬU RANG MỘC ( 1kg )",
     price: "150.000 VNĐ",
   },
   {
-    image: require("../assets/images/menu/17.jpeg"),
+    image: require("../assets/images/menu/17.jpg"),
     name: "TRÀ ĐẬU TÚI LỌC ( 20 GÓI )",
     price: "240.000 VNĐ",
   },
@@ -146,8 +146,8 @@ function Menu() {
       <HeroBlock
         containerClassName={styles.heroBlock}
         contentClassName={styles.menuHeadingContainer}
-        imgBackgroundUrlPreview={require("../assets/images/menu/1.png?lqip")}
-        imgBackgroundUrl={require("../assets/images/menu/1.png")}
+        imgBackgroundUrlPreview={require("../assets/images/menu/1.jpg?lqip")}
+        imgBackgroundUrl={require("../assets/images/menu/1.jpg")}
       >
         {renderMenuHeading()}
       </HeroBlock>
