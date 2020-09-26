@@ -1,7 +1,6 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
-
   render() {
     return (
       <Html>
@@ -13,6 +12,13 @@ class MyDocument extends Document {
         </Head>
         <body>
           <div id="fb-root"></div>
+          <scrip
+            defer
+            async
+            crossorigin="anonymous"
+            nonce="ZphRaHDi"
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0"
+          ></scrip>
           <Main />
           <NextScript />
         </body>
