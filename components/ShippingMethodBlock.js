@@ -49,7 +49,7 @@ function ShippingMethodBlock() {
                 <p>{card.description}</p>
                 {card.link ? (
                   <a target="_blank" href={card.link}>
-                    <p class="link">{card.link}</p>
+                    <p className="link">{card.link}</p>
                   </a>
                 ) : (
                   <p>{card.detailDescription}</p>

@@ -17,7 +17,7 @@ class MyDocument extends Document {
             async
             crossorigin="anonymous"
             nonce="ZphRaHDi"
-            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0"
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0&appId=1119644398129491&autoLogAppEvents=1"
           ></scrip>
           <Main />
           <NextScript />
