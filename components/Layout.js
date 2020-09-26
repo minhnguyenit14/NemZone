@@ -229,7 +229,7 @@ function Layout({ children }) {
             <div className={styles.blockTitle}>Facebook</div>
             <div ref={refFBBlock} className={styles.blockContent}>
               {/** --- FACEBOOK FANPAGE PLUGIN ---*/}
-              {!!widthFBBlock && (
+              {/* {!!widthFBBlock && ( */}
                 <div
                   className={cn(
                     styles.navFooterItem,
@@ -240,7 +240,7 @@ function Layout({ children }) {
                     className="fb-page"
                     data-href="https://www.facebook.com/NemZone"
                     data-tabs=""
-                    data-width={widthFBBlock}
+                    // data-width={widthFBBlock}
                     data-height=""
                     data-small-header="false"
                     data-adapt-container-width="true"
@@ -260,7 +260,7 @@ function Layout({ children }) {
                     </blockquote>
                   </div>
                 </div>
-              )}
+              {/* )} */}
               {/** --- end region --- */}
             </div>
           </div>
