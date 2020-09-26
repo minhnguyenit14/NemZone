@@ -234,7 +234,13 @@ function Layout({ children }) {
 
             <div className={styles.footerBlock}>
               <div className={styles.blockTitle}>Facebook</div>
-              <div ref={refFBBlock} className={styles.blockContent}>
+              <div
+                ref={refFBBlock}
+                className={cn(
+                  styles.blockContent,
+                  styles.fanPage
+                )}
+              >
                 {/** --- FACEBOOK FANPAGE PLUGIN ---*/}
                 <Page
                   href="https://www.facebook.com/NemZone"
