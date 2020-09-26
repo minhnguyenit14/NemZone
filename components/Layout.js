@@ -5,6 +5,7 @@ import Link from "next/link";
 import cn from "classnames";
 import config from "../app.config.json";
 import loadScript from "load-script";
+import { FacebookProvider, Page, CustomChat } from "react-facebook";
 
 const HEADER_DATA = [
   {
@@ -73,13 +74,12 @@ function Layout({ children }) {
   const refFBBlock = React.useRef();
 
   const [isShowNavMobile, setShowNavMobile] = React.useState(false);
-  const [widthFBBlock, setWidthFBBlock] = React.useState(null);
+  const [widthFBBlock, setWidthFBBlock] = React.useState("");
 
   React.useEffect(() => {
     if (refFBBlock.current) {
       setWidthFBBlock(refFBBlock.current.clientWidth);
     }
-    // loadScript("/fbMessenger.plugin.js");
   }, []);
 
   function toggleNavMobile() {
@@ -103,7 +103,13 @@ function Layout({ children }) {
       return (
         <Link key={index} href={nav.link}>
           <a>
-            <h6 className={cn(styles.navItem, styles.navHeaderLinkItem, extraClassName)}>
+            <h6
+              className={cn(
+                styles.navItem,
+                styles.navHeaderLinkItem,
+                extraClassName
+              )}
+            >
               {nav.title}
             </h6>
           </a>
@@ -147,151 +153,126 @@ function Layout({ children }) {
   }
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <link rel="icon" href="/logo.svg" />
-        <title>{config.name}</title>
-      </Head>
+    <FacebookProvider appId="123456789">
+      <div className={styles.container}>
+        <Head>
+          <link rel="icon" href="/logo.svg" />
+          <title>{config.name}</title>
+        </Head>
 
-      <header className={cn("w-full fixed z-50", styles.headerContainer)}>
-        <div
-          className={cn("flex justify-center p-btn-y", styles.headerInfo)}
-          style={{ height: HEADER_INFO_HEIGHT }}
-        >
-          {renderHeaderData()}
-        </div>
-        <div
-          className={cn(styles.navWrapper)}
-          style={{ height: HEADER_MAIN_HEIGHT }}
-        >
+        <header className={cn("w-full fixed z-50", styles.headerContainer)}>
           <div
-            className={cn(
-              "max-w-app-width flex flex-1 justify-between items-center",
-              styles.navContainer
-            )}
+            className={cn("flex justify-center p-btn-y", styles.headerInfo)}
+            style={{ height: HEADER_INFO_HEIGHT }}
+          >
+            {renderHeaderData()}
+          </div>
+          <div
+            className={cn(styles.navWrapper)}
+            style={{ height: HEADER_MAIN_HEIGHT }}
           >
             <div
               className={cn(
-                "flex justify-between items-center",
-                styles.responsiveNavTogglerContainer
+                "max-w-app-width flex flex-1 justify-between items-center",
+                styles.navContainer
               )}
             >
-              <Link href="/">
-                <a>
-                  <img src="/logo.svg" className={styles.headerLogo} />
-                </a>
-              </Link>
-              <NavMobileToggle
-                onClick={toggleNavMobile}
-                isOpen={isShowNavMobile}
-              />
-            </div>
-            <div className={styles.navItemMobileContainer}>
               <div
                 className={cn(
-                  styles.navItemContainer,
-                  isShowNavMobile && styles.showNavMobile
+                  "flex justify-between items-center",
+                  styles.responsiveNavTogglerContainer
                 )}
-                style={{
-                  height: `calc(100vh - ${HEADER_HEIGHT}px)`,
-                }}
               >
-                {renderNavHeader()}
+                <Link href="/">
+                  <a>
+                    <img src="/logo.svg" className={styles.headerLogo} />
+                  </a>
+                </Link>
+                <NavMobileToggle
+                  onClick={toggleNavMobile}
+                  isOpen={isShowNavMobile}
+                />
+              </div>
+              <div className={styles.navItemMobileContainer}>
+                <div
+                  className={cn(
+                    styles.navItemContainer,
+                    isShowNavMobile && styles.showNavMobile
+                  )}
+                  style={{
+                    height: `calc(100vh - ${HEADER_HEIGHT}px)`,
+                  }}
+                >
+                  {renderNavHeader()}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </header>
-      {isShowNavMobile && (
-        <div className=" absolute w-full h-full bg-white  lg:hidden" />
-      )}
-      <main style={{ marginTop: HEADER_HEIGHT }}>{children}</main>
-      <footer className={cn(styles.footerContainer)}>
-        <div className={styles.footerMainContainer}>
-          <div className={styles.footerBlock}>
-            <Link href="/">
-              <a>
-                <img src="/logo.svg" />
-              </a>
-            </Link>
-          </div>
+        </header>
+        {isShowNavMobile && (
+          <div className=" absolute w-full h-full bg-white  lg:hidden" />
+        )}
+        <main style={{ marginTop: HEADER_HEIGHT }}>{children}</main>
+        <footer className={cn(styles.footerContainer)}>
+          <div className={styles.footerMainContainer}>
+            <div className={styles.footerBlock}>
+              <Link href="/">
+                <a>
+                  <img src="/logo.svg" />
+                </a>
+              </Link>
+            </div>
 
-          <div className={styles.footerBlock}>
-            <div className={styles.blockTitle}>Thông tin</div>
-            <div className={styles.blockContent}>{renderNavFooter()}</div>
-          </div>
-          <div className={styles.footerBlock}>
-            <div className={styles.blockTitle}>Liên hệ</div>
-            <div className={styles.blockContent}>{renderContactFooter()}</div>
-          </div>
+            <div className={styles.footerBlock}>
+              <div className={styles.blockTitle}>Thông tin</div>
+              <div className={styles.blockContent}>{renderNavFooter()}</div>
+            </div>
+            <div className={styles.footerBlock}>
+              <div className={styles.blockTitle}>Liên hệ</div>
+              <div className={styles.blockContent}>{renderContactFooter()}</div>
+            </div>
 
-          <div className={styles.footerBlock}>
-            <div className={styles.blockTitle}>Facebook</div>
-            <div ref={refFBBlock} className={styles.blockContent}>
-              {/** --- FACEBOOK FANPAGE PLUGIN ---*/}
-              {/* {!!widthFBBlock && ( */}
-                <div
-                  className={cn(
-                    styles.navFooterItem,
-                    styles.navFooterContactItem
-                  )}
-                >
-                  <div
-                    className="fb-page"
-                    data-href="https://www.facebook.com/NemZone"
-                    data-tabs=""
-                    // data-width={widthFBBlock}
-                    data-height=""
-                    data-small-header="false"
-                    data-adapt-container-width="true"
-                    data-hide-cover="false"
-                    data-show-facepile="true"
-                  >
-                    <blockquote
-                      cite="https://www.facebook.com/NemZone"
-                      className="fb-xfbml-parse-ignore"
-                    >
-                      <a
-                        target="_blank"
-                        href="https://www.facebook.com/NemZone"
-                      >
-                        NemZone
-                      </a>
-                    </blockquote>
-                  </div>
-                </div>
-              {/* )} */}
-              {/** --- end region --- */}
+            <div className={styles.footerBlock}>
+              <div className={styles.blockTitle}>Facebook</div>
+              <div ref={refFBBlock} className={styles.blockContent}>
+                {/** --- FACEBOOK FANPAGE PLUGIN ---*/}
+                <Page
+                  href="https://www.facebook.com/NemZone"
+                  showFacepile
+                  adaptContainerWidth
+                />
+                {/** --- end region --- */}
+              </div>
             </div>
           </div>
-        </div>
 
-        <p className={styles.copyright}>
-          Copyright © 2020 - NemZone. All Rights Reserved.
-        </p>
-
-        <a
-          href={`tel:${config.hotline}`}
-          className={cn(styles.hotlineContainer, "stickyBtn")}
-        >
-          <div className={styles.hotlineIconContainer}>
-            <img
-              className={styles.hotlineIcon}
-              src={require("../assets/icons/phone.svg")}
-            />
-          </div>
-          <p className={styles.hotlinePhone}>
-            Hotline: {config.hotline_formatted}
+          <p className={styles.copyright}>
+            Copyright © 2020 - NemZone. All Rights Reserved.
           </p>
-        </a>
 
-        <div
-          className="fb-customerchat"
-          attribution="setup_tool"
-          page_id="1119644398129491"
-        />
-      </footer>
-    </div>
+          <a
+            href={`tel:${config.hotline}`}
+            className={cn(styles.hotlineContainer, "stickyBtn")}
+          >
+            <div className={styles.hotlineIconContainer}>
+              <img
+                className={styles.hotlineIcon}
+                src={require("../assets/icons/phone.svg")}
+              />
+            </div>
+            <p className={styles.hotlinePhone}>
+              Hotline: {config.hotline_formatted}
+            </p>
+          </a>
+          <CustomChat pageId="1119644398129491" minimized/>
+          {/* <div
+            className="fb-customerchat"
+            attribution="setup_tool"
+            page_id="1119644398129491"
+          /> */}
+        </footer>
+      </div>
+    </FacebookProvider>
   );
 }
 

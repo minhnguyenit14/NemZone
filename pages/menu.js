@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import styles from "../styles/pages/menu.module.scss";
 import cn from "classnames";
-import ShippingMethodBlock from "../components/ShippingMethodBlock";
+const ShippingMethodBlock = dynamic(() => import("../components/ShippingMethodBlock"));
 
 const Layout = dynamic(() => import("../components/Layout"));
 const HeroBlock = dynamic(() => import("../components/HeroBlock"));

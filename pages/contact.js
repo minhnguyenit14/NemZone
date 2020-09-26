@@ -15,7 +15,7 @@ function Contact() {
           height="100%"
           frameBorder="0"
           style={{ border: 0 }}
-          allowFullScreen="false"
+          allowFullScreen={false}
           aria-hidden="false"
           tabIndex="0"
           className="lazyload blur-up"
