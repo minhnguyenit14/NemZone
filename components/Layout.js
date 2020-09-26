@@ -153,7 +153,7 @@ function Layout({ children }) {
   }
 
   return (
-    <FacebookProvider appId="123456789">
+    <FacebookProvider version="v8.0" xfbml chatSupport>
       <div className={styles.container}>
         <Head>
           <link rel="icon" href="/logo.svg" />
@@ -264,7 +264,8 @@ function Layout({ children }) {
               Hotline: {config.hotline_formatted}
             </p>
           </a>
-          <CustomChat pageId="1119644398129491" minimized/>
+
+          <CustomChat pageId="1119644398129491" minimized />
           {/* <div
             className="fb-customerchat"
             attribution="setup_tool"
