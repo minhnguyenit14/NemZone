@@ -8,7 +8,7 @@ import HeroBlock from "../components/HeroBlock";
 import ShippingMethodBlock from "../components/ShippingMethodBlock";
 
 function About() {
-  
+
   return (
     <Layout>
       <HighlightBlock
@@ -26,7 +26,7 @@ function About() {
         </div>
         <div className={cn("flexContainer", styles.brandStoryHeadingContainer)}>
           <div className="flex flex-col lg:flex-row relative">
-            <img src={require("../assets/icons/chopstick.svg")} />
+            <img className={styles.chopstickImg} src={require("../assets/icons/chopstick.svg")} />
             <h3>Câu chuyện thương hiệu</h3>
           </div>
         </div>
