@@ -153,7 +153,7 @@ function Layout({ children }) {
   }
 
   return (
-    <FacebookProvider version="v8.0" xfbml chatSupport>
+    <FacebookProvider version="v8.0" appId="123456789" xfbml chatSupport>
       <div className={styles.container}>
         <Head>
           <link rel="icon" href="/logo.svg" />
