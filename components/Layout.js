@@ -126,12 +126,10 @@ function Layout({ children }) {
     return navData.map((nav, index) => {
       return (
         <Link key={index} href={nav.link}>
-          <a>
+          <a className={styles.navFooterItem}>
             <p
               className={cn(
-                "",
                 styles.navItem,
-                styles.navFooterItem,
                 styles.navFooterLinkItem
               )}
             >
@@ -273,11 +271,6 @@ function Layout({ children }) {
           </a>
 
           <CustomChat pageId="1119644398129491" minimized />
-          {/* <div
-            className="fb-customerchat"
-            attribution="setup_tool"
-            page_id="1119644398129491"
-          /> */}
         </footer>
       </div>
     </FacebookProvider>

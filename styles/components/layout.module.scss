@@ -186,7 +186,7 @@
 }
 
 .navFooterItem {
-  &::before {
+  > .navFooterLinkItem::before {
     content: "•";
     margin-right: 12px;
   }
