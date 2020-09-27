@@ -1,15 +1,16 @@
 .highlightFirst {
-  height: 411px;
+  height: calc(100vw * 10 / 9);
   h1 {
     margin-bottom: 20px;
   }
 
-  button {
-    text-transform: uppercase;
+  a {
+    @apply uppercase;
+    @apply font-h1;
   }
 
   @screen lg {
-    height: 600px;
+    height: calc(100vw * 5 / 12);
   }
 }
 
@@ -75,6 +76,7 @@
 }
 
 .highlightDescriptionSecond {
+  margin-bottom: 40px;
   > p {
     margin-top: 20px;
     &:last-child {

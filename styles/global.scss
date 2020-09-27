@@ -131,6 +131,7 @@ p {
   @apply px-btn-x;
   @apply py-btn-y;
   @apply text-white;
+  @apply font-h1;
   line-height: 20px;
   border-radius: 10px;
 
@@ -239,4 +240,13 @@ p {
 
 .link {
   text-decoration: underline;
+}
+
+.svgIconIncluded {
+  > svg {
+    > path {
+      @apply stroke-current;
+      stroke-width: 2px;
+    }
+  }
 }

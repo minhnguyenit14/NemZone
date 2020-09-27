@@ -6,6 +6,7 @@ import styles from "../styles/pages/home.module.scss";
 import cn from "classnames";
 import Card from "../components/Card";
 import Carousel from "../components/Carousel";
+import Link from "next/link";
 const LazyStaticImage = dynamic(() => import("../components/LazyStaticImage"));
 
 const CARD_DATA = [
@@ -195,7 +196,9 @@ function Home() {
         imgBackgroundUrl={require("../assets/images/home/1.jpg")}
       >
         <h1>Nem giòn không dầu mỡ</h1>
-        <button className={cn("btn")}>Xem thực đơn ngay</button>
+        <Link href="/menu">
+          <a className={cn("btn")}>Xem thực đơn ngay</a>
+        </Link>
       </HeroBlock>
 
       <HighlightBlock
@@ -234,9 +237,11 @@ function Home() {
               khỏe của khách hàng.
             </p>
           </div>
-          <button className={cn("btn self-start", styles.highlightBtn)}>
-            Đọc thêm về chúng tôi
-          </button>
+          <Link href="/about">
+            <a className={cn("btn self-start", styles.highlightBtn)}>
+              Đọc thêm về chúng tôi
+            </a>
+          </Link>
         </HighlightBlock.Item>
       </HighlightBlock>
 
@@ -292,9 +297,11 @@ function Home() {
               <p>Nem và Món Ăn Vặt khác</p>
               <p>Cuốn tươi</p>
             </div>
-            <button className={cn("btn self-start", styles.highlightBtn)}>
-              Xem chi tiết thực đơn
-            </button>
+            <Link href="/menu">
+              <a className={cn("btn self-start", styles.highlightBtn)}>
+                Xem chi tiết thực đơn
+              </a>
+            </Link>
           </div>
         </HighlightBlock.Item>
       </HighlightBlock>
@@ -346,7 +353,9 @@ function Home() {
         >
           {renderCardBlog()}
         </div>
-        <button className={cn("btn self-center")}>Xem thêm bài viết</button>
+        <Link href="/handbook">
+          <a className={cn("btn self-center")}>Xem thêm bài viết</a>
+        </Link>
       </HighlightBlock>
     </Layout>
   );

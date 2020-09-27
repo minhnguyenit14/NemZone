@@ -12,7 +12,7 @@ const CARD_SHOPPING_METHOD_DATA = [
     detailDescription: "để được hỗ trợ giao hàng",
     btnTitle: "GỌI NGAY",
     href: config.hotline_link,
-    target: "auto",
+    target: "",
   },
   {
     icon: require("../assets/icons/facebook.svg"),
@@ -59,7 +59,7 @@ function ShippingMethodBlock() {
             <a target={card.target} className={styles.cardBtn} href={card.href}>
               <h6>{card.btnTitle}</h6>
               <div
-                className={styles.btnIconContainer}
+                className={cn("svgIconIncluded", styles.btnIconContainer)}
                 dangerouslySetInnerHTML={{
                   __html: require("../assets/icons/arrow-right.svg?include"),
                 }}

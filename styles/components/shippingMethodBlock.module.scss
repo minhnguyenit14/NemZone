@@ -77,9 +77,5 @@
   > svg {
     height: 15px;
     width: 10px;
-    > path {
-      @apply stroke-current;
-      stroke-width: 2px;
-    }
   }
 }

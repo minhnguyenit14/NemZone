@@ -33,7 +33,7 @@ function Contact() {
           <p>Giờ mở cửa: {config.open_time}</p>
           <p>
             Facebook:{" "}
-            <a className="link" target="_blank" href={config.fb_link}>
+            <a className="link text-p" target="_blank" href={config.fb_link}>
               {config.fb_link}
             </a>
           </p>

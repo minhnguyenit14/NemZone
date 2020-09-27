@@ -5,8 +5,16 @@
 }
 
 .brandStoryImageContainer {
+  @apply relative;
   width: 100%;
-  height: 50%;
+  padding-bottom: 50%;
+
+  img {
+    @apply absolute;
+    @apply w-full;
+    @apply h-full;
+    @apply object-cover;
+  }
 }
 
 .brandStoryHeadingContainer {

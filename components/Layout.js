@@ -99,7 +99,11 @@ function Layout({ children }) {
 
   function renderNavHeader(navData = NAV_DATA) {
     return navData.map((nav, index) => {
-      const extraClassName = router.pathname == nav.link ? "text-primary" : "";
+      const extraClassName =
+        router.pathname == nav.link ||
+        (nav.link == "/handbook" && router.pathname.includes(nav.link))
+          ? "text-primary"
+          : "";
       return (
         <Link key={index} href={nav.link}>
           <a>
@@ -236,10 +240,7 @@ function Layout({ children }) {
               <div className={styles.blockTitle}>Facebook</div>
               <div
                 ref={refFBBlock}
-                className={cn(
-                  styles.blockContent,
-                  styles.fanPage
-                )}
+                className={cn(styles.blockContent, styles.fanPage)}
               >
                 {/** --- FACEBOOK FANPAGE PLUGIN ---*/}
                 <Page

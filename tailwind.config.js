@@ -89,7 +89,7 @@ module.exports = {
         50: "50px"
       },
       maxWidth: {
-        "app-width": "1200px",
+        "app-width": "1170px",
       },
     },
   },
