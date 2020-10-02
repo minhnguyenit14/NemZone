@@ -150,7 +150,7 @@ function Layout({ children }) {
   }
 
   return (
-    <FacebookProvider version="v8.0" xfbml appId="123456789">
+    <FacebookProvider version="v8.0" appId="123456789">
       <div className={styles.container}>
         <Head>
           <link rel="icon" href="/logo.svg" />
@@ -236,6 +236,24 @@ function Layout({ children }) {
                 className={cn(styles.blockContent, styles.fanPage)}
               >
                 {/** --- FACEBOOK FANPAGE PLUGIN ---*/}
+                {/* <div
+                  className="fb-page"
+                  data-href="https://www.facebook.com/NemZone"
+                  data-tabs=""
+                  data-width=""
+                  data-height=""
+                  data-small-header="false"
+                  data-adapt-container-width="true"
+                  data-hide-cover="false"
+                  data-show-facepile="true"
+                >
+                  <blockquote
+                    cite="https://www.facebook.com/NemZone"
+                    className="fb-xfbml-parse-ignore"
+                  >
+                    <a href="https://www.facebook.com/NemZone">NemZone</a>
+                  </blockquote>
+                </div> */}
                 <Page
                   href="https://www.facebook.com/NemZone"
                   showFacepile
