@@ -8,52 +8,52 @@ import styles from "../../styles/pages/handbook.module.scss";
 
 const CARD_BLOG_DATA = [
   {
+    id: 1,
     image: require("../../assets/images/home/13.jpg"),
     title: "3 Thói Quen Quan Trọng Nhất Để Xây Dựng Lối Sống Xanh",
     description:
       "Có hàng trăm, thậm chí hàng nghìn việc chúng ta có thể làm để giảm thiểu lượng tài nguyên và khí thải được sản xuất từ cuộc sống hàng ngày. ...",
     note: "Đăng bởi NemZone | 23/08/2020",
-    href: "/handbook/1",
   },
   {
+    id: 2,
     image: require("../../assets/images/home/14.jpg"),
     title: "Cách đơn giản nhất để bảo quản rau tươi trong tủ lạnh",
     description:
       "Bạn muốn bảo quản rau tươi trong một thời gian dài? Bạn đã biết cách nhưng đang tìm kiếm một phương án xanh hơn và không tạo ra rác thải? ...",
     note: "Đăng bởi NemZone | 23/08/2020",
-    href: "/handbook/2",
   },
   {
+    id: 3,
     image: require("../../assets/images/home/15.jpg"),
     title: "7 Nguyên Tắc Không Thể Không Biết về Chế Độ Ăn Sạch (Eat Clean)",
     description:
       "Ăn sạch (Eat clean) là một trong những xu hướng sức khỏe được quan tâm nhất tại Việt Nam trong những năm gần đây. ...",
     note: "Đăng bởi NemZone | 23/08/2020",
-    href: "/handbook/3",
   },
   {
+    id: 4,
     image: require("../../assets/images/home/13.jpg"),
     title: "3 Thói Quen Quan Trọng Nhất Để Xây Dựng Lối Sống Xanh",
     description:
       "Có hàng trăm, thậm chí hàng nghìn việc chúng ta có thể làm để giảm thiểu lượng tài nguyên và khí thải được sản xuất từ cuộc sống hàng ngày. ...",
     note: "Đăng bởi NemZone | 23/08/2020",
-    href: "/handbook/4",
   },
   {
+    id: 5,
     image: require("../../assets/images/home/14.jpg"),
     title: "Cách đơn giản nhất để bảo quản rau tươi trong tủ lạnh",
     description:
       "Bạn muốn bảo quản rau tươi trong một thời gian dài? Bạn đã biết cách nhưng đang tìm kiếm một phương án xanh hơn và không tạo ra rác thải? ...",
     note: "Đăng bởi NemZone | 23/08/2020",
-    href: "/handbook/5",
   },
   {
+    id: 6,
     image: require("../../assets/images/home/15.jpg"),
     title: "7 Nguyên Tắc Không Thể Không Biết về Chế Độ Ăn Sạch (Eat Clean)",
     description:
       "Ăn sạch (Eat clean) là một trong những xu hướng sức khỏe được quan tâm nhất tại Việt Nam trong những năm gần đây. ...",
     note: "Đăng bởi NemZone | 23/08/2020",
-    href: "/handbook/6",
   },
 ];
 
@@ -80,50 +80,63 @@ const RECENTLY_CARD_DATA = [
   },
 ];
 
+const CARD_BLOG_PER_PAGE = 5;
+
 function Handbook() {
+  const [selectedPageIndex, setSelectedPageIndex] = React.useState(1);
+
+  function handleChangePage(e, pageIndex) {
+    setSelectedPageIndex(pageIndex);
+  }
+
   function renderCardBlog() {
+    const startIndex = CARD_BLOG_PER_PAGE * (selectedPageIndex - 1);
+    const endIndex = startIndex + CARD_BLOG_PER_PAGE;
+    console.log(startIndex, endIndex)
     let temp = [],
       result = [];
     CARD_BLOG_DATA.forEach((card, index) => {
-      const isHotBlock = index === 0;
-      temp.push(
-        <div
-          key={index}
-          className={cn(
-            "floatFlex",
-            styles.cardWrapper,
-            styles.cardBlogWrapper,
-            isHotBlock ? styles.hotBlock : styles.normalBlock
-          )}
-        >
-          <Card key={index} containerClassName={cn(styles.cardBlogContainer)}>
-            <div className={styles.cardBlogImage}>
-              <img src={card.image} />
-            </div>
-            <div className={cn(styles.cardBlogMainContent)}>
-              <Link href={card.href}>
-                <a>
-                  <h5 className="hover:text-primary">{card.title}</h5>
-                </a>
-              </Link>
-              <p>{card.description}</p>
-              <p>{card.note}</p>
-            </div>
-          </Card>
-        </div>
-      );
-      if (!isHotBlock) {
-        if (index % 2 === 0 || index === CARD_BLOG_DATA.length - 1) {
-          result.push(
-            <div
-              key={index}
-              className="flexContainer p-0 flex-wrap justify-between"
-            >
-              {temp}
-            </div>
-          );
-          temp = [];
-        }
+      if (index >= startIndex && index < endIndex) {
+        const isHotBlock = index === startIndex;
+        temp.push(
+          <div
+            key={index}
+            className={cn(
+              "floatFlex",
+              styles.cardWrapper,
+              styles.cardBlogWrapper,
+              isHotBlock ? styles.hotBlock : styles.normalBlock
+            )}
+          >
+            <Card key={index} containerClassName={cn(styles.cardBlogContainer)}>
+              <div className={styles.cardBlogImage}>
+                <img src={card.image} />
+              </div>
+              <div className={cn(styles.cardBlogMainContent)}>
+                <Link href={`/handbook/${card.id}`}>
+                  <a>
+                    <h5 className="hover:text-primary">{card.title}</h5>
+                  </a>
+                </Link>
+                <p>{card.description}</p>
+                <p>{card.note}</p>
+              </div>
+            </Card>
+          </div>
+        );
+        // if (!isHotBlock) {
+          if (index % 2 === 0 || index === CARD_BLOG_DATA.length - 1) {
+            result.push(
+              <div
+                key={index}
+                className="flexContainer p-0 flex-wrap justify-between"
+              >
+                {temp}
+              </div>
+            );
+            temp = [];
+          }
+        // }
       }
     });
 
@@ -156,7 +169,7 @@ function Handbook() {
             styles.container
           )}
         >
-          <div className={cn("floatFlex", styles.mainBlock)}>
+          <div className={cn("floatFlex justify-start", styles.mainBlock)}>
             <HighlightBlock
               containerClassName={cn("")}
               contentClassName={cn(
@@ -172,7 +185,14 @@ function Handbook() {
               >
                 {renderCardBlog()}
               </div>
-              <Pagination />
+              <Pagination
+                defaultPageIndex={1}
+                selectedPageIndex={selectedPageIndex}
+                totalPages={Math.ceil(
+                  CARD_BLOG_DATA.length / CARD_BLOG_PER_PAGE
+                )}
+                onChangePage={handleChangePage}
+              />
             </HighlightBlock>
           </div>
 

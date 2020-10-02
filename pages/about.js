@@ -68,8 +68,8 @@ function About() {
             imgBackgroundUrl={require("../assets/images/about/3.jpg")}
             contentClassName={styles.coreValueContainer}
           >
-            <p className="textScript">Giá trị cốt lõi #1</p>
-            <h3>TỐT CHO SỨC KHỎE</h3>
+            <p className="textScript">Giá trị cốt lõi #2</p>
+            <h3>TIỆN LỢI CHO NGƯỜI DÙNG</h3>
           </HeroBlock>
         </HighlightBlock.Item>
       </HighlightBlock>

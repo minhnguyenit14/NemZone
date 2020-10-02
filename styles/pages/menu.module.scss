@@ -125,7 +125,9 @@
   }
 }
 
-.foodBtn {
+.foodPriceTag {
+  @apply bg-primary;
+  @apply text-white;
   border-radius: 20px;
   padding: 5px 10px;
 }

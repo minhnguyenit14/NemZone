@@ -7,18 +7,8 @@ const ShippingMethodBlock = dynamic(() => import("../components/ShippingMethodBl
 const Layout = dynamic(() => import("../components/Layout"));
 const HeroBlock = dynamic(() => import("../components/HeroBlock"));
 
-const MENU_DATA = [
-  {
-    title: "Nem và Món Ăn Vặt Khác",
-    selected: true,
-  },
-  {
-    title: "Cuốn Tươi",
-    selected: false,
-  },
-];
 
-const FOOD_DATA = [
+const FOOD_DATA_1 = [
   {
     image: require("../assets/images/menu/2.jpg"),
     name: "NEM TÔM ( 15 C )",
@@ -101,19 +91,66 @@ const FOOD_DATA = [
   },
 ];
 
+const FOOD_DATA_2 = [
+  {
+    image: require("../assets/images/menu/18.jpg"),
+    name: "Nem cuốn tôm thịt ( 10 C )",
+    price: "145.000 VNĐ",
+  },
+  {
+    image: require("../assets/images/menu/19.jpg"),
+    name: "Nem cuốn thịt thính ( 10 C )",
+    price: "95.000 VNĐ",
+  },
+  {
+    image: require("../assets/images/menu/20.jpg"),
+    name: "Nem cuốn nấm tươi ( 10 C )",
+    price: "95.000 VNĐ",
+  },
+  {
+    image: require("../assets/images/menu/21.jpg"),
+    name: "Cuốn mix 3 loại ( 15 C )",
+    price: "165.000 VNĐ",
+  },
+  {
+    image: require("../assets/images/menu/22.jpg"),
+    name: "Diếp cuốn mẻ chưng ( 10 C )",
+    price: "145.000 VNĐ",
+  },
+]
+
+const MENU_DATA = [
+  {
+    title: "Nem và Món Ăn Vặt Khác",
+    id: 1,
+    menu: FOOD_DATA_1
+  },
+  {
+    title: "Cuốn Tươi",
+    id: 2,
+    menu: FOOD_DATA_2
+  },
+];
+
 function Menu() {
+  const [selectedMenu, setSelectedMenu] = React.useState(MENU_DATA[0]);
+
+  function handleChangeMenu(menu_data){
+    setSelectedMenu(menu_data);
+  }
   function renderMenuHeading() {
     return MENU_DATA.map((menu, index) => {
+      const isSelected = menu.id === selectedMenu.id;
       return (
         <div
           key={index}
           className={cn(
             "flex flex-1 items-center, justify-center",
             styles.menuItemContainer,
-            menu.selected && styles.selected
+            isSelected && styles.selected
           )}
         >
-          <button>
+          <button onClick={() => handleChangeMenu(menu)}>
             <h4>{menu.title}</h4>
           </button>
         </div>
@@ -122,7 +159,7 @@ function Menu() {
   }
 
   function renderFoods() {
-    return FOOD_DATA.map((food, index) => {
+    return selectedMenu.menu.map((food, index) => {
       return (
         <div key={index} className={cn("flex", styles.foodContainer)}>
           <div className={styles.foodImageContainer}>
@@ -132,9 +169,7 @@ function Menu() {
           </div>
           <div className={styles.foodInfoContainer}>
             <h5>{food.name}</h5>
-            <Link href="#">
-              <a className={cn("btn", styles.foodBtn)}>{food.price}</a>
-            </Link>
+              <span className={cn(styles.foodPriceTag)}>{food.price}</span>
           </div>
         </div>
       );

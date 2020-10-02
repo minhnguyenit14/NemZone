@@ -18,21 +18,21 @@ const CARD_DATA = [
   },
   {
     icon: require("../assets/icons/fast-delivery.svg"),
-    title: "Không dầu mỡ",
+    title: "Tiện lợi",
     description:
-      "Các món Nem đều được chúng tôi nướng bằng nồi chiên không dầu,nhờ đó giòn tan không cần rán, đảm bảo sức khỏe cho mỗi thực khách.",
+      "Sản phẩm được cấp đông ngay sau khi gói giữ hương vị. Thực khách có thể dự trữ bảo quản tủ đá 2 tháng và nướng chỉ 10 phút, không cần rã đông.",
   },
   {
     icon: require("../assets/icons/snack.svg"),
-    title: "Không dầu mỡ",
+    title: "Bảo vệ môi trường",
     description:
-      "Các món Nem đều được chúng tôi nướng bằng nồi chiên không dầu,nhờ đó giòn tan không cần rán, đảm bảo sức khỏe cho mỗi thực khách.",
+      "Tất cả bao bì của sản phẩm sử dụng chất liệu thân thiện với môi trường và tuyệt đối an toàn cho người dùng.",
   },
   {
     icon: require("../assets/icons/hot-food.svg"),
-    title: "Không dầu mỡ",
+    title: "Ngon - lạ - sạch",
     description:
-      "Các món Nem đều được chúng tôi nướng bằng nồi chiên không dầu,nhờ đó giòn tan không cần rán, đảm bảo sức khỏe cho mỗi thực khách.",
+      "Chu toàn từ khâu lựa chọn nguyên liệu cho đến chế biến sản phẩm, NemZone mang đến những bữa ăn ngon và đầy đủ dinh dưỡng.",
   },
 ];
 
@@ -47,6 +47,7 @@ const PRODUCT_IMAGES = [
 
 const CARD_BLOG_DATA = [
   {
+    id: 1,
     image: require("../assets/images/home/13.jpg"),
     title: "3 Thói Quen Quan Trọng Nhất Để Xây Dựng Lối Sống Xanh",
     description:
@@ -54,6 +55,7 @@ const CARD_BLOG_DATA = [
     note: "Đăng bởi NemZone | 23/08/2020",
   },
   {
+    id: 2,
     image: require("../assets/images/home/14.jpg"),
     title: "Cách đơn giản nhất để bảo quản rau tươi trong tủ lạnh",
     description:
@@ -61,6 +63,7 @@ const CARD_BLOG_DATA = [
     note: "Đăng bởi NemZone | 23/08/2020",
   },
   {
+    id: 3,
     image: require("../assets/images/home/15.jpg"),
     title: "7 Nguyên Tắc Không Thể Không Biết về Chế Độ Ăn Sạch (Eat Clean)",
     description:
@@ -161,7 +164,11 @@ function Home() {
               <img src={card.image} />
             </div>
             <div className={cn(styles.cardBlogMainContent)}>
-              <h5>{card.title}</h5>
+              <Link href={`/handbook/${card.id}`}>
+                <a>
+                  <h5 className="hover:text-primary">{card.title}</h5>
+                </a>
+              </Link>
               <p>{card.description}</p>
               <p>{card.note}</p>
             </div>
