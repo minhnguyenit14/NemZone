@@ -127,12 +127,7 @@ function Layout({ children }) {
       return (
         <Link key={index} href={nav.link}>
           <a className={styles.navFooterItem}>
-            <p
-              className={cn(
-                styles.navItem,
-                styles.navFooterLinkItem
-              )}
-            >
+            <p className={cn(styles.navItem, styles.navFooterLinkItem)}>
               {nav.title}
             </p>
           </a>
@@ -155,7 +150,7 @@ function Layout({ children }) {
   }
 
   return (
-    <FacebookProvider version="v8.0" appId="123456789" xfbml chatSupport>
+    <FacebookProvider version="v8.0" xfbml appId="123456789">
       <div className={styles.container}>
         <Head>
           <link rel="icon" href="/logo.svg" />
@@ -270,7 +265,11 @@ function Layout({ children }) {
             </p>
           </a>
 
-          <CustomChat pageId="1119644398129491" minimized />
+          <div
+            className="fb-customerchat"
+            attribution="setup_tool"
+            page_id="1119644398129491"
+          />
         </footer>
       </div>
     </FacebookProvider>

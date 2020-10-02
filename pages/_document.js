@@ -5,9 +5,9 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="stylesheet" href="/assets/fonts/fonts.css" />
+          <link rel="stylesheet" href="./assets/fonts/fonts.css" />
           {/** ---- Facebook page-plugin required component --- */}
-          <script src="/fbMessenger.plugin.js"></script>
+          <script src="./fbMessenger.plugin.js"></script>
           {/** --- end region --- */}
         </Head>
         <body>

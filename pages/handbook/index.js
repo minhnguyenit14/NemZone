@@ -92,7 +92,6 @@ function Handbook() {
   function renderCardBlog() {
     const startIndex = CARD_BLOG_PER_PAGE * (selectedPageIndex - 1);
     const endIndex = startIndex + CARD_BLOG_PER_PAGE;
-    console.log(startIndex, endIndex)
     let temp = [],
       result = [];
     CARD_BLOG_DATA.forEach((card, index) => {
