@@ -49,25 +49,4 @@ export const CARD_BLOG_DATA = [
   },
 ];
 
-export const RECENTLY_CARD_DATA = [
-  {
-    id: 1,
-    image: require("./assets/images/home/13.jpg"),
-    title: "3 Thói Quen Quan Trọng Nhất Để Xây Dựng Lối Sống Xanh",
-  },
-  {
-    id: 2,
-    image: require("./assets/images/home/14.jpg"),
-    title: "Cách đơn giản nhất để bảo quản rau tươi trong tủ lạnh",
-  },
-  {
-    id: 3,
-    image: require("./assets/images/home/15.jpg"),
-    title: "7 Nguyên Tắc Không Thể Không Biết về Chế Độ Ăn Sạch (Eat Clean)",
-  },
-  {
-    id: 4,
-    image: require("./assets/images/home/13.jpg"),
-    title: "3 Thói Quen Quan Trọng Nhất Để Xây Dựng Lối Sống Xanh",
-  },
-];
+export const RECENTLY_CARD_DATA = CARD_BLOG_DATA.slice(0, 4);

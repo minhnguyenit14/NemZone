@@ -15,7 +15,7 @@ const HandbookArticle = () => {
   const router = useRouter();
   const { id } = router.query;
   function renderRelativeCardBlog() {
-    return RELATIVE_CARD_BLOG_DATA.map((card, index) => {
+    return RECENTLY_CARD_DATA.map((card, index) => {
       return (
         <div key={index} className={cn(styles.relativeBlogContainer)}>
           <Card key={index} containerClassName={cn(styles.cardBlogContainer)}>
@@ -37,7 +37,71 @@ const HandbookArticle = () => {
     });
   }
 
+  function renderBlogRouting() {
+    const prevId = Number(id) - 1;
+    const nextId = Number(id) + 1;
+    const prevIndex = RELATIVE_CARD_BLOG_DATA.findIndex(blog => blog.id === prevId);
+    const nextIndex = RELATIVE_CARD_BLOG_DATA.findIndex(blog => blog.id === nextId)
+    console.log(prevIndex, nextIndex)
+    const prevItem = RELATIVE_CARD_BLOG_DATA[prevIndex];
+    const nextItem = RELATIVE_CARD_BLOG_DATA[nextIndex];
+    const prevRouter = prevItem !== undefined && prevItem !== null && (
+      <div className={cn("floatFlex lg:mr-auto", styles.articleRoutingBtnContainer)}>
+        <Link href={`/handbook/${prevId}`}>
+          <a>
+            <div className={cn("flex items-center", styles.articleRoutingBtn)}>
+              <div
+                className={cn("svgIconIncluded", styles.leftIcon)}
+                dangerouslySetInnerHTML={{
+                  __html: require("../../assets/icons/arrow-right.svg?include"),
+                }}
+              />
+              <div>
+                <h6>{prevItem.title}</h6>
+                <p>Bài viết trước</p>
+              </div>
+            </div>
+          </a>
+        </Link>
+      </div>
+    );
+    const nextRouter = nextItem !== undefined && nextItem !== null && (
+      <div className={cn("floatFlex lg:ml-auto", styles.articleRoutingBtnContainer)}>
+        <Link href={`/handbook/${nextId}`}>
+          <a>
+            <div
+              className={cn(
+                "flex items-center",
+                styles.articleRoutingBtn,
+                styles.right
+              )}
+            >
+              <div>
+                <h6>{nextItem.title}</h6>
+                <p>Bài viết sau</p>
+              </div>
+
+              <div
+                className={cn("svgIconIncluded", styles.rightIcon)}
+                dangerouslySetInnerHTML={{
+                  __html: require("../../assets/icons/arrow-right.svg?include"),
+                }}
+              />
+            </div>
+          </a>
+        </Link>
+      </div>
+    );
+    return (
+      <>
+        {prevRouter}
+        {nextRouter}
+      </>
+    );
+  }
+
   function renderRecentlyCard() {
+    console.log(RECENTLY_CARD_DATA)
     return RECENTLY_CARD_DATA.map((card, index) => {
       return (
         <div key={index} className={cn("flex", styles.recentlyCardContainer)}>
@@ -171,64 +235,9 @@ const HandbookArticle = () => {
               </p>
               <p>Tham khảo: Zen Habits</p>
             </div>
-            <div className={cn("flexContainer", styles.articleRouting)}>
-              <div
-                className={cn("floatFlex", styles.articleRoutingBtnContainer)}
-              >
-                <Link href="#">
-                  <a>
-                    <div
-                      className={cn(
-                        "flex items-center",
-                        styles.articleRoutingBtn
-                      )}
-                    >
-                      <div
-                        className={cn("svgIconIncluded", styles.leftIcon)}
-                        dangerouslySetInnerHTML={{
-                          __html: require("../../assets/icons/arrow-right.svg?include"),
-                        }}
-                      />
-                      <div>
-                        <h6>
-                          Cách đơn giản nhất để bảo quản rau tươi trong tủ lạnh
-                        </h6>
-                        <p>Bài viết trước</p>
-                      </div>
-                    </div>
-                  </a>
-                </Link>
-              </div>
-              <div
-                className={cn("floatFlex", styles.articleRoutingBtnContainer)}
-              >
-                <Link href="#">
-                  <a>
-                    <div
-                      className={cn(
-                        "flex items-center",
-                        styles.articleRoutingBtn,
-                        styles.right
-                      )}
-                    >
-                      <div>
-                        <h6>
-                          7 Nguyên Tắc Không Thể Không Biết về Chế Độ Ăn Sạch
-                          (Eat Clean)
-                        </h6>
-                        <p>Bài viết sau</p>
-                      </div>
 
-                      <div
-                        className={cn("svgIconIncluded", styles.rightIcon)}
-                        dangerouslySetInnerHTML={{
-                          __html: require("../../assets/icons/arrow-right.svg?include"),
-                        }}
-                      />
-                    </div>
-                  </a>
-                </Link>
-              </div>
+            <div className={cn("flexContainer", styles.articleRouting)}>
+              {renderBlogRouting()}
             </div>
 
             <div>

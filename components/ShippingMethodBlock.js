@@ -25,7 +25,7 @@ const CARD_SHOPPING_METHOD_DATA = [
   },
   {
     icon: require("../assets/icons/pin.svg"),
-    title: "Hotline",
+    title: "Mua tại cửa hàng",
     description: "Tới mua hàng trực tiếp ở địa chỉ",
     detailDescription: config.address,
     btnTitle: "XEM BẢN ĐỒ",
