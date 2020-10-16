@@ -2,11 +2,12 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import styles from "../styles/pages/menu.module.scss";
 import cn from "classnames";
-const ShippingMethodBlock = dynamic(() => import("../components/ShippingMethodBlock"));
+const ShippingMethodBlock = dynamic(() =>
+  import("../components/ShippingMethodBlock")
+);
 
 const Layout = dynamic(() => import("../components/Layout"));
 const HeroBlock = dynamic(() => import("../components/HeroBlock"));
-
 
 const FOOD_DATA_1 = [
   {
@@ -25,7 +26,7 @@ const FOOD_DATA_1 = [
     price: "130.000 VNĐ",
   },
   {
-    image: require("../assets/images/menu/5.png"),
+    image: require("../assets/images/menu/5.jpg"),
     name: "NEM BÒ LÁ LỐT ( 20 C )",
     price: "165.000 VNĐ",
   },
@@ -117,25 +118,29 @@ const FOOD_DATA_2 = [
     name: "Diếp cuốn mẻ chưng ( 10 C )",
     price: "145.000 VNĐ",
   },
-]
+];
 
 const MENU_DATA = [
   {
     title: "Nem và Món Ăn Vặt Khác",
     id: 1,
-    menu: FOOD_DATA_1
+    menu: FOOD_DATA_1,
+    description:
+      "Sản phẩm nem độc đáo được cấp đông ngay sau khi gói giữ nguyên hương vị. Thực khách mua về bảo quản tủ đá được 2 tháng. Nướng và rán ngay khi cần theo hdsd trên bao bì. Tuyệt đối không rã đông.",
   },
   {
     title: "Cuốn Tươi",
     id: 2,
-    menu: FOOD_DATA_2
+    menu: FOOD_DATA_2,
+    description:
+      "Cuốn tươi là món ăn tươi ngon trong vòng 3 tiếng. Bếp chỉ cuốn sát giờ đặt đảm bảo độ tươi ngon nhất khi đến tay thực khách. Nếu chưa ăn ngay, thực khách buộc kín bảo quản tủ mát.",
   },
 ];
 
 function Menu() {
   const [selectedMenu, setSelectedMenu] = React.useState(MENU_DATA[0]);
 
-  function handleChangeMenu(menu_data){
+  function handleChangeMenu(menu_data) {
     setSelectedMenu(menu_data);
   }
   function renderMenuHeading() {
@@ -158,6 +163,14 @@ function Menu() {
     });
   }
 
+  function renderDescription() {
+    return (
+      <div className={styles.description}>
+        <h5>{selectedMenu.description}</h5>
+      </div>
+    );
+  }
+
   function renderFoods() {
     return selectedMenu.menu.map((food, index) => {
       return (
@@ -169,7 +182,7 @@ function Menu() {
           </div>
           <div className={styles.foodInfoContainer}>
             <h5>{food.name}</h5>
-              <span className={cn(styles.foodPriceTag)}>{food.price}</span>
+            <span className={cn(styles.foodPriceTag)}>{food.price}</span>
           </div>
         </div>
       );
@@ -187,13 +200,11 @@ function Menu() {
         {renderMenuHeading()}
       </HeroBlock>
       <div className={styles.foodsWrapper}>
-        <div
-          className={cn(
-            "flexContainer max-w-app-width m-0-auto",
-            styles.foodsContainer
-          )}
-        >
-          {renderFoods()}
+        <div className={cn("max-w-app-width m-0-auto")}>
+          {renderDescription()}
+          <div className={cn("flexContainer", styles.foodsContainer)}>
+            {renderFoods()}
+          </div>
         </div>
       </div>
 

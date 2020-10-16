@@ -8,6 +8,6 @@
   js.setAttribute("async", "true");
   js.setAttribute("defer", "true");
   js.setAttribute("nonce", "ZphRaHDi");
-  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0";
+  js.src = "https://connect.facebook.net/en_US/all.js#xfbml=1&version=v8.0";
   fjs.parentNode.insertBefore(js, fjs);
 })(document, "script", "fanpage-facebook-jssdk");

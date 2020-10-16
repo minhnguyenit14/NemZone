@@ -64,6 +64,26 @@
 
 .foodsWrapper {
   background-color: #fff;
+  padding-top: 30px;
+}
+
+.description {
+  background-color: #f6f6f6;
+  border-bottom: 2px solid #ddd;
+  @apply flex-1;
+  @apply flex;
+  @apply justify-center;
+  @apply items-center;
+  padding: 30px;
+  > h5 {
+    max-width: 700px;
+    @apply text-center;
+  }
+
+  @screen lg {
+  border-radius: 10px;
+  margin-bottom: -10px;
+  }
 }
 
 .foodsContainer {
